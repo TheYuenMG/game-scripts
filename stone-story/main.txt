@@ -1,0 +1,15 @@
+// When powered on, the Mind Stone continuously
+// executes instructions given to it.
+// Instructions must be scribed in Stonescript.
+// Learn more at:
+// StoneStoryRPG.com/stonescript
+// -Bezerra, the Sage
+
+import UI/MindstoneButton
+?hp < 7
+  activate potion
+?loc = caves
+  equipL sword
+  equipR shield
+  ?foe = boss
+    equip crossbow
