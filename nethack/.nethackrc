@@ -2,90 +2,30 @@
 # Copyright (c) 2006 by Michael Allison
 # NetHack may be freely redistributed.  See license for details.
 
-# Sample config file for win32 NetHack
-# A '#' at the beginning of a line means the rest of the line is a comment.
-#
-# Some options MUST be set in this file, other options can be toggled while
-# playing.  For a list of options available see the <opthelp.> file.
-#
-# To change the configuration, comment out the unwanted lines, and
-# uncomment the configuration you want.
-#
-# $NHDT-Date: 1524689357 2018/04/25 20:49:17 $  $NHDT-Branch: NetHack-3.6.0 $:$NHDT-Revision: 1.32 $
+# Options Configuration File for NetHack 3.6.7
+# Otis Yuen (TheYuenMG)
+# Last modified on 11 March 2026
 
-# *** OPTIONS ***
-#
-# Use the IBM character set rather than just plain ascii characters
-# for tty window-port.
-OPTIONS=symset:IBMGraphics_2,roguesymset:RogueEpyx
-
-# Here is a suggested symbol set from Michael Feir,
-# for use by blind NetHack players
-#OPTIONS=symset:NHAccess,roguesymset:NHAccess
-
-# Optional curses port interface
-#OPTIONS=windowtype:curses
-#
-# Keyboard handling
-# Ray Chason's keyboard handling
-# OPTIONS=altkeyhandling:ray
-#
-# NetHack 3.4.0 keyboard handling
-# OPTIONS=altkeyhandling:340
-
-# *** Personal Preferences ***
-# Some options to set personal preferences.  Uncomment and change these to
-# suit your personal preference.  If several people are to use the same
-# configuration, options like these should not be set.
-#
-#OPTIONS=name:Janet,role:Valkyrie,race:Human,gender:female,align:lawful
-#OPTIONS=dogname:Fido,catname:Morris,fruit:guava
-#OPTIONS=horsename:Silver
-
-# Disable autopickup
-OPTIONS=!autopickup
-
-# When autopickup is on, automatically pick up these types of objects
-#OPTIONS=pickup_types:$"=/!?+
-
-#OPTIONS=packorder:")[%?+/=!(*0_`
-#OPTIONS=scores:10 top/2 around/own
-#OPTIONS=nolegacy,noverbose
-#OPTIONS=menustyle:traditional
-#OPTIONS=perm_invent
-
-
-# Highlight menu lines with different colors. You need to define the colors
-# with MENUCOLOR lines.
-#  Toggle menucolor use on or off
-OPTIONS=menucolors
-# Define color used for a certain menu line. Format is
-#    MENUCOLOR="regular expression"=color
-# or
-#    MENUCOLOR="regular expression"=color&attribute
-#  Show all blessed items in green
-MENUCOLOR=" blessed " = green
-#  Show all holy water in green
-MENUCOLOR=" holy " = green
-#  Show all cursed items in red
-MENUCOLOR=" cursed " = red
-#  Show all unholy water in red
-MENUCOLOR=" unholy " = red
-#  Show all cursed worn items in orange and underlined
-MENUCOLOR=" cursed .* (being worn)" = orange&underline
+# "This is my NetHack configuration file. There are many like it, but this one is mine."
+# - Valkyrie Gomer Pyle, before zapping a wand of death at Gunnery Sergeant Yendor
 
 
 
+# *** General Options ***
 # General options.  You might also set "silent" so as not to attract
 # the boss's attention.
 #
+# Cool idea! Also, fuck the terminal bell.
+OPTIONS=silent
 # number_pad option can have an optional value of 0 (off), 1 (on),
 # or 2(on,legacy-mode) which causes 5='g', alt-5='G', alt-0='I'
-OPTIONS=time,noshowexp,number_pad:2,lit_corridor,mouse_support:1
-
+OPTIONS=number_pad:2,lit_corridor
+#
+# Show turncount, experience, score
+OPTIONS=time,showexp,showscore
+#
 # Make commands that ask for an inventory item pop up a menu
-OPTIONS=force_invmenu
-
+#OPTIONS=force_invmenu
 #
 # If you want to get rid of "use #quit to quit..." use:
 OPTIONS=suppress_alert:3.3.1
@@ -93,7 +33,10 @@ OPTIONS=suppress_alert:3.3.1
 # Note: the rest_on_space in the next line may not be
 #       appropriate for a beginning NetHack player, since
 #       it could result in use of a turn unintentionally.
-#       If you're new to NetHack, leave it commented it out.
+#       If you are new to NetHack, leave it commented it out.
+#       If you are a NetHack veteran and value your sanity,
+#       leave it commented it out. For more sanity-increasing
+#       tips, avoid playing NetHack entirely.
 #OPTIONS=rest_on_space
 #
 # Set some options to control graphical window-port (these will
@@ -106,38 +49,45 @@ OPTIONS=suppress_alert:3.3.1
 #                                    tiles_fit_to_screen
 OPTIONS=map_mode:tiles,scroll_margin:10
 
-# Message window settings
-OPTIONS=font_message:Arial,font_size_message:14,align_message:top
 
-# Menu settings
-OPTIONS=font_menu:Arial,font_size_menu:14
 
-# Text settings
-OPTIONS=font_text:Courier New,font_size_text:14
+# *** Personal Preferences ***
+# Some options to set personal preferences.  Uncomment and change these to
+# suit your personal preference.  If several people are to use the same
+# configuration, options like these should not be set.
+#
+# Profile from default config file
+#OPTIONS=name:Janet,role:Valkyrie,race:human,gender:female,align:lawful
+#OPTIONS=dogname:Fido,catname:Morris,horsename:Silver
+#OPTIONS=fruit:guava
+#
+# Main character, but usually selected manually anyways
+#OPTIONS=name:Yuen,role:Wizard,race:human,gender:female,align:chaotic
+#
+# And just for good measure...
+#OPTIONS=name:Gomer Pyle,role:Valkyrie,race:dwarf,gender:female,align:lawful
+#
+# Set custom pet names because default names are stupid and bad
+OPTIONS=catname:MEGACHONKER,dogname:Trish,horsename:Stupid Horse
+#
+# Set custom fruit name because Brogue
+OPTIONS=fruit:mango
+#
+# Disable autopickup (ick)
+OPTIONS=!autopickup
+#
+# When autopickup is on, automatically pick up these types of objects
+#OPTIONS=pickup_types:$"=/!?+
+#
+# More useless shit from default config file
+#OPTIONS=packorder:")[%?+/=!(*0_`
+#OPTIONS=scores:10 top/2 around/own
+#OPTIONS=nolegacy,noverbose
+#OPTIONS=menustyle:traditional
 
-# Status window settings
-OPTIONS=font_status:Courier New,font_size_status:14
 
-# Other
-OPTIONS=hilite_pet,!toptenwin
-#OPTIONS=!splash_screen,player_selection:prompts
 
-# Status/message window colors
-# Possible color options include:
-# six digit hexadecimal RGB color value ("#8F8F8F"), black, red, green, brown,
-# blue, magenta, cyan, gray (or grey), orange, brightgreen, yellow, brightblue,
-# brightmagenta, brightcyan, white, trueblack, purple, silver, maroon, fuchsia,
-# lime, olive, navy, teal, aqua, activeborder, activecaption, appworkspace,
-# background, btnface, btnshadow, btntext, captiontext, graytext, highlight,
-# highlighttext, inactiveborder, inactivecaption, menu, menutext, scrollbar,
-# window, windowframe, windowtext.
-#OPTIONS=windowcolors:status windowtext/window message windowtext/window
-
-# "Nethack mode" colors
-OPTIONS=windowcolors:status white/#000000 message white/#000000 text white/#000000 menu white/#000000 menutext white/#000000
-OPTIONS=vary_msgcount:4
-
-# *** LOCATIONS ***
+# *** Locations ***
 # IMPORTANT: If you change any of these locations, the directories they
 # point at must exist.  NetHack will not create them for you.
 #
@@ -158,20 +108,84 @@ OPTIONS=vary_msgcount:4
 #
 # The location that file synchronization locks are stored (writeable)
 #LOCKDIR=c:\ProgramData\NetHack\3.6
-#
 
-# Finnish keyboards might need these modifications uncommented.
+
+
+# *** Keyboard Remapping ***
+# DO NOT TOUCH UNLESS YOU WANT TO FUCK YOUR GAME...
+# ...or if you are using a non-QWERTY keyboard layout
+#
+# For the Finnish keyboard user, consider the following options.
 # For  \, @, $, [, |
 #OPTIONS=subkeyvalue:171/92
 #OPTIONS=subkeyvalue:178/64
 #OPTIONS=subkeyvalue:180/36
 #OPTIONS=subkeyvalue:184/91
 #OPTIONS=subkeyvalue:188/124
+# For the stenograph user, consider a fentanyl overdose.
 
+
+
+# *** Curses Interface ***
+# "Holy Jesus! What is that? What the fuck is that? WHAT IS THAT, VALKYRIE PYLE!?"
+# - Gunnery Sergeant Yendor, after seeing Valkyrie Gomer Pyle's curses interface
 #
+# Enable curses interface
+OPTIONS=windowtype:curses
+# Set terminal window size, in characters (default: 120*30)
+OPTIONS=term_cols:144,term_rows:40
+# Draw window borders if terminal window large enough
+OPTIONS=windowborders:2
+# Hide ASCII splash screen, because NetHack is not a GameFAQs walkthrough
+OPTIONS=!splash_screen
+# Use mouse for moving around
+OPTIONS=mouse_support
+# Show permanent inventory window as sidebar
+OPTIONS=perm_invent
+
+
+
+# *** Fonts ***
+# "Wait, it's all Cascadia Code?"
+# "Always has been." *ZAP*
+#
+# Message window settings
+OPTIONS=font_message:Cascadia Code,font_size_message:12
+#
+# Menu settings
+OPTIONS=font_menu:Cascadia Code,font_size_menu:12
+#
+# Text settings
+OPTIONS=font_text:Cascadia Code,font_size_text:12
+#
+# Status window settings
+OPTIONS=font_status:Cascadia Code,font_size_status:12
+
+
+
+# *** Colours ***
+# Status/message window colors
+# Possible color options include:
+# six digit hexadecimal RGB color value ("#8F8F8F"), black, red, green, brown,
+# blue, magenta, cyan, gray (or grey), orange, brightgreen, yellow, brightblue,
+# brightmagenta, brightcyan, white, trueblack, purple, silver, maroon, fuchsia,
+# lime, olive, navy, teal, aqua, activeborder, activecaption, appworkspace,
+# background, btnface, btnshadow, btntext, captiontext, graytext, highlight,
+# highlighttext, inactiveborder, inactivecaption, menu, menutext, scrollbar,
+# window, windowframe, windowtext.
+#OPTIONS=windowcolors:status windowtext/window message windowtext/window
+#
+# "Nethack mode" colors
+OPTIONS=windowcolors:status white/#000000 message white/#000000 text white/#000000 menu white/#000000 menutext white/#000000
+OPTIONS=vary_msgcount:4
+
+
+
+# *** Colour Schemes ***
 # Some versions of Windows allow you to adjust the win32 console port
 # colors using R-G-B settings.
 #
+# Nice to keep if The Ground Gives Way was not Dracula Colour Scheme enough
 #OPTIONS=palette:black-0-0-0
 #OPTIONS=palette:red-210-0-0
 #OPTIONS=palette:green-80-200-0
@@ -191,42 +205,130 @@ OPTIONS=vary_msgcount:4
 
 
 
-# Status hilites
-OPTIONS=statushilites
-# HP
+# *** Menu Highlights ***
+# Highlight menu lines with different colors. You need to define the colors
+# with MENUCOLOR lines.
+#
+# Toggle menucolor use on or off
+OPTIONS=menucolors
+#
+# Define color used for a certain menu line. Format is
+#    MENUCOLOR="regular expression"=color
+# or
+#    MENUCOLOR="regular expression"=color&attribute
+#
+# Show gold in yellow
+MENUCOLOR="gold piece"=yellow
+# Show blessed items in green
+MENUCOLOR="( blessed| holy)"=green
+# Show cursed items in red (funny aside, the leading space is required
+# or else every un"cursed" item also turns red lmao)
+MENUCOLOR="( cursed| unholy)"=red
+# Show footrice corpses in magenta and inverse
+MENUCOLOR="trice"=magenta&inverse
+# Show "unbaggables" in cyan and inverse
+MENUCOLOR="bag.*(holding|tricks)"=cyan&inverse
+MENUCOLOR="wand.*(cancel|vanish)"=cyan&inverse
+# Show real Amulet of Yendor in yellow and inverse
+MENUCOLOR="Amulet of Yendor named"=yellow&inverse
+
+
+
+# *** Status Highlights ***
+# One of my favourite sections in the entire config file, this section
+# displays coloured text in the status line
+#
+# Display status highlights for 10 turns
+OPTIONS=statushilites:10
+#
+# Display hitpoint bar at name and title
 OPTIONS=hitpointbar
-OPTIONS=hilite_status:hitpoints/100%/gray&normal
+#
+# Highlight hitpoints at certain thresholds
+OPTIONS=hilite_status:hitpoints/100%/white&normal
 OPTIONS=hilite_status:hitpoints/<100%/green&normal
-OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
-OPTIONS=hilite_status:hitpoints/<50%/orange&normal
-OPTIONS=hilite_status:hitpoints/<33%/red&bold
-OPTIONS=hilite_status:hitpoints/<15%/red&inverse
-
-## Pw
-OPTIONS=hilite_status:power/100%/gray&normal
-OPTIONS=hilite_status:power/<100%/green&normal
-OPTIONS=hilite_status:power/<66%/yellow&normal
-OPTIONS=hilite_status:power/<50%/orange&normal
-OPTIONS=hilite_status:power/<33%/red&bold
-
-## Carry
-OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
-
-## Hunger
-OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
-
-## Mental
-OPTIONS=hilite_status:condition/hallu/yellow
-OPTIONS=hilite_status:condition/conf/orange
-OPTIONS=hilite_status:condition/stun/red&bold
-
-## Health
-OPTIONS=hilite_status:condition/termill/red&inverse
-OPTIONS=hilite_status:condition/foodpois/red&inverse
-OPTIONS=hilite_status:condition/slime/red&inverse
-
-# gold
-OPTIONS=hilite_status:gold/up/yellow/down/brown
-
-# St, Dx, Co, In, Wi, Ch
+OPTIONS=hilite_status:hitpoints/<75%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&bold
+OPTIONS=hilite_status:hitpoints/<25%/red&bold
+OPTIONS=hilite_status:hitpoints/<10%/red&bold&inverse
+#
+# Highlight power at certain thresholds
+OPTIONS=hilite_status:power/100%/white&normal
+OPTIONS=hilite_status:power/<100%/cyan&normal
+OPTIONS=hilite_status:power/<75%/brightblue&normal
+OPTIONS=hilite_status:power/<50%/blue&normal
+OPTIONS=hilite_status:power/<25%/gray&normal
+#
+# Highlight encumberance at each stage
+OPTIONS=hilite_status:cap/burdened/yellow
+OPTIONS=hilite_status:cap/stressed/orange
+OPTIONS=hilite_status:cap/strained/red&bold
+OPTIONS=hilite_status:cap/overtaxed/red&inverse
+OPTIONS=hilite_status:cap/overloaded/red&inverse&blink
+#
+# Highlight hunger at each stage
+OPTIONS=hilite_status:hunger/satiated/brightmagenta&bold
+OPTIONS=hilite_status:hunger/hungry/yellow
+OPTIONS=hilite_status:hunger/weak/orange&bold
+OPTIONS=hilite_status:hunger/fainting/red&bold
+OPTIONS=hilite_status:hunger/fainted/red&inverse&blink
+#
+# Highlight non-lethal status effects
+OPTIONS=hilite_status:condition/hallu/yellow&bold
+OPTIONS=hilite_status:condition/conf/brightmagenta&bold
+OPTIONS=hilite_status:condition/stun/brightblue&bold
+#
+# Highlight lethal status effects
+OPTIONS=hilite_status:condition/termill/gray&bold&inverse
+OPTIONS=hilite_status:condition/foodpois/brightmagenta&bold&inverse
+OPTIONS=hilite_status:condition/slime/brightgreen&bold&inverse
+#
+# Highlight gold at increase or decrease
+OPTIONS=hilite_status:gold/up/yellow/down/red
+#
+# Highlight attributes at increase or decrease
 OPTIONS=hilite_status:characteristics/up/green/down/red
+
+
+
+# *** Extra Options ***
+# Collection of options outside of the above categories to reduce my suffering
+#
+# Dig automatically when moving while wielding a digging tool
+OPTIONS=autodig
+# Disable generation of bones files
+OPTIONS=!bones
+# Default to "yes" and "ask" when disclosing post-game information
+OPTIONS=disclose:yi ya ?v yg yc yo
+# Highlight allied creatures to distinguish from non-tame creatures
+OPTIONS=hilite_pet
+# Highlight tiles with multiple items
+OPTIONS=hilite_pile
+# Label items confirmed to be uncursed explicitly with "uncursed"
+OPTIONS=!implicit_uncursed
+# Exchange current weapon to alternate weapon slot when wielding second weapon
+OPTIONS=pushweapon
+# Redraw screen after every turn for multi-turn actions
+OPTIONS=runmode:walk
+# Enable quick movement with travel command
+OPTIONS=travel
+# Hide certain frequent and annoying messages
+MSGTYPE=hide "With (great|little) effort, you move the boulder."
+MSGTYPE=hide "You swap places with .*"
+# Stop and prompt --More-- at certain significant messages
+MSGTYPE=stop "You feel a strange vibration .*"
+MSGTYPE=stop "You wrest .*"
+# Map glyphs to non-default symbols
+SYMBOLS=S_boulder:0
+SYMBOLS=S_ghost:X
+SYMBOLS=S_lava:~
+SYMBOLS=S_mimic_def:m
+SYMBOLS=S_poisoncloud:~
+SYMBOLS=S_pool:~
+SYMBOLS=S_strange_obj:m
+SYMBOLS=S_water:~
+
+
+
+# "So be it, until the Amulet of Yendor is mine and there is no Moloch, but ascension!"
+# - Dungeon Crawler's Creed
