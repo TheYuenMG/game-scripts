@@ -6,6 +6,11 @@
 # Otis Yuen (TheYuenMG)
 # Last modified on 22 June 2026
 
+# *** To-Do List ***
+# - [ ] TODO: Fix windowcolors option (line 185)
+# - [ ] TODO: Set "mention_" options (decor, map, walls, etc.) to false
+# - [ ] TODO: Update formatting to match default 5.0.0 RC file standards
+
 # "This is my NetHack configuration file. There are many like it, but this one is mine."
 # - Valkyrie Gomer Pyle, before zapping a wand of death at Gunnery Sergeant Yendor
 
