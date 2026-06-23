@@ -4,7 +4,7 @@
 
 # Options Configuration File for NetHack 3.6.7
 # Otis Yuen (TheYuenMG)
-# Last modified on 11 March 2026
+# Last modified on 22 June 2026
 
 # "This is my NetHack configuration file. There are many like it, but this one is mine."
 # - Valkyrie Gomer Pyle, before zapping a wand of death at Gunnery Sergeant Yendor
@@ -175,8 +175,9 @@ OPTIONS=font_status:Cascadia Code,font_size_status:12
 # window, windowframe, windowtext.
 #OPTIONS=windowcolors:status windowtext/window message windowtext/window
 #
-# "Nethack mode" colors
-OPTIONS=windowcolors:status white/#000000 message white/#000000 text white/#000000 menu white/#000000 menutext white/#000000
+# "Nethack mode" colors - causes error, cannot be arsed to figure out why
+# Error: " * Line 179: windowcolors for unrecognized window type: menutext."
+#OPTIONS=windowcolors:status white/#000000 message white/#000000 text white/#000000 menu white/#000000 menutext white/#000000
 OPTIONS=vary_msgcount:4
 
 
