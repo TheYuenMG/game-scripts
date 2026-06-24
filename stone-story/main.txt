@@ -19,6 +19,9 @@ equipR shield
 ?harvest.distance < 10
   equip hatchet
 
+?foe ! boss & foe.distance > 8
+  equipL ouroboros
+
 /*
 ?hp < 7
   activate potion
