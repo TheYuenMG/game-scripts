@@ -22,6 +22,9 @@ equipR shield
 ?foe ! boss & foe.distance > 8
   equipL ouroboros
 
+?pickup.distance < 10
+  equipL star
+
 /*
 ?hp < 7
   activate potion
