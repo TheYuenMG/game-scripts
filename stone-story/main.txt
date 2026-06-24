@@ -5,7 +5,9 @@
 // StoneStoryRPG.com/stonescript
 // -Bezerra, the Sage
 
+import Pets/Frog
 import UI/MindstoneButton
+
 ?hp < 7
   activate potion
 ?loc = caves
