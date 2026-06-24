@@ -25,13 +25,3 @@ import UI/MindstoneButton
 
   ?pickup.distance < 10
     equipL star
-
-/*
-?hp < 7
-  activate potion
-?loc = caves
-  equipL sword
-  equipR shield
-  ?foe = boss
-    equip crossbow
-*/
