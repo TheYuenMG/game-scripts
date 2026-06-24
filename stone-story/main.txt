@@ -8,6 +8,7 @@
 import Pets/Frog
 import UI/MindstoneButton
 
+/*
 ?hp < 7
   activate potion
 ?loc = caves
@@ -15,3 +16,4 @@ import UI/MindstoneButton
   equipR shield
   ?foe = boss
     equip crossbow
+*/
