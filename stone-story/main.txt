@@ -11,6 +11,11 @@ import UI/MindstoneButton
 ?hp < 7
   activate potion
 
+equipL sword
+equipR shield
+?foe = mosquito
+  equip crossbow
+
 /*
 ?hp < 7
   activate potion
