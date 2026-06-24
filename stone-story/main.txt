@@ -8,6 +8,9 @@
 import Pets/Frog
 import UI/MindstoneButton
 
+?hp < 7
+  activate potion
+
 /*
 ?hp < 7
   activate potion
