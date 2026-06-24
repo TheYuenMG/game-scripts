@@ -10,6 +10,15 @@ import Pets/Boo
 import Pets/Frog
 import UI/MindstoneButton
 
+// *** Attack Animation Cancelling ***
+?item.left.state = 3
+  equipL *0 wand //trash
+  equipL @item.left@
+
+?item.right.state = 3
+  equipR *0 shield //trash
+  equip @item.right@
+
 // *** Deadwood Experience Farming ***
 ?loc = deadwood
   ?foe.distance <= 5 & item.potion = exp
