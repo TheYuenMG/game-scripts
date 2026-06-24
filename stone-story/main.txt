@@ -5,10 +5,12 @@
 // StoneStoryRPG.com/stonescript
 // -Bezerra, the Sage
 
+
 import Fishing
 import Pets/Boo
 import Pets/Frog
 import UI/MindstoneButton
+
 
 // *** Attack Animation Cancelling ***
 ?item.left.state = 3
@@ -18,6 +20,7 @@ import UI/MindstoneButton
 ?item.right.state = 3
   equipR *0 shield //trash
   equip @item.right@
+
 
 // *** Deadwood Experience Farming ***
 ?loc = deadwood
