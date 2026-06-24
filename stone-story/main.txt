@@ -16,6 +16,9 @@ equipR shield
 ?foe = mosquito
   equip crossbow
 
+?harvest.distance < 10
+  equip hatchet
+
 /*
 ?hp < 7
   activate potion
