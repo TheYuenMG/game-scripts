@@ -5,6 +5,8 @@
 // StoneStoryRPG.com/stonescript
 // -Bezerra, the Sage
 
+import Fishing
+import Pets/Boo
 import Pets/Frog
 import UI/MindstoneButton
 
