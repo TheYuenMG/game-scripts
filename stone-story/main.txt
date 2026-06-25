@@ -69,7 +69,11 @@ import UI/MindstoneButton
   ?pickup.distance < 10
     equipR star
 
-  // *** Skeleton Arm R&D ***
+  /*
+  *** Skeleton Arm Activation ***
+  Modified from "Wild Ride - Challenge IV" by Martian Rex
+  Source: https://steamcommunity.com/app/603390/discussions/0/2961670721743547882/
+  */
   ?item.GetCooldown("skeleton_arm") <= 0
     equip skeleton arm
     ?item.CanActivate("skeleton_arm")
