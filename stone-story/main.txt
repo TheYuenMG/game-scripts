@@ -58,7 +58,7 @@ import UI/MindstoneButton
 
 // *** Caves Skeleton Arm R&D ***
 ?loc = caves
-    ?hp < maxhp * 0.1 & item.potion = heal
+    ?hp <= maxhp * 0.2 & item.potion = heal
         activate potion
 
     ?foe.distance <= 18
