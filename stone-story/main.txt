@@ -46,3 +46,11 @@ import UI/MindstoneButton
 
   ?harvest.distance < 10
     equip hatchet
+
+
+// *** Skeleton Arm R&D ***
+loadout 1
+?item.GetCooldown("skeleton_arm") <= 0
+  equip skeleton arm
+  ?item.CanActivate("skeleton_arm")
+    activate R
