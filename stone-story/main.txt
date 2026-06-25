@@ -6,6 +6,7 @@
 // -Bezerra, the Sage
 
 
+// *** Community Scripts ***
 import Fishing
 import Hats/Skully
 import Pets/Boo
