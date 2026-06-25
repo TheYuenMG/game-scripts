@@ -76,5 +76,6 @@ import UI/MindstoneButton
   */
   ?item.GetCooldown("skeleton_arm") <= 0
     equip skeleton arm
-    ?item.CanActivate("skeleton_arm")
+    ?item.CanActivate("skeleton_arm") &
+    ^foe.hp + foe.armor <= 10 // within kill range
       activate R
