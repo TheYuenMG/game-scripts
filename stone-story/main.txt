@@ -15,67 +15,67 @@ import UI/MindstoneButton
 
 // *** Attack Animation Cancelling ***
 ?item.left.state = 3
-  equipL *0 wand //trash
-  equipL @item.left@
+    equipL *0 wand //trash
+    equipL @item.left@
 
 ?item.right.state = 3
-  equipR *0 shield //trash
-  equip @item.right@
+    equipR *0 shield //trash
+    equip @item.right@
 
 
 // *** Deadwood Experience Farming ***
 ?loc = deadwood
-  ?foe.distance <= 5 & item.potion = exp
-    activate potion
+    ?foe.distance <= 5 & item.potion = exp
+        activate potion
 
-  ?foe.distance <= 18
-    equipL exp
-    equipR vig sword
+    ?foe.distance <= 18
+        equipL exp
+        equipR vig sword
 
-  ?foe = boss
-    equipL vig sword
-    equip com shield
-    ?foe.hp <= foe.maxhp * 0.1
-      equipR exp
+    ?foe = boss
+        equipL vig sword
+        equip com shield
+        ?foe.hp <= foe.maxhp * 0.1
+            equipR exp
 
-  ?foe.distance > 18
-    equipL trisk
+    ?foe.distance > 18
+        equipL trisk
 
-  ?pickup.distance < 10
-    equipR star
+    ?pickup.distance < 10
+        equipR star
 
-  ?harvest.distance < 10
-    equip hatchet
+    ?harvest.distance < 10
+        equip hatchet
 
 
 // *** Caves Skeleton Arm R&D ***
 ?loc = caves
-  ?hp < maxhp * 0.1 & item.potion = heal
-    activate potion
+    ?hp < maxhp * 0.1 & item.potion = heal
+        activate potion
 
-  ?foe.distance <= 18
-    equipL exp
-    equipR vig sword
+    ?foe.distance <= 18
+        equipL exp
+        equipR vig sword
 
-  ?foe = boss
-    equipL vig sword
-    equip com shield
-    ?foe.hp <= foe.maxhp * 0.1
-      equipR exp
+    ?foe = boss
+        equipL vig sword
+        equip com shield
+        ?foe.hp <= foe.maxhp * 0.1
+            equipR exp
 
-  ?foe.distance > 18
-    equipL trisk
+    ?foe.distance > 18
+        equipL trisk
 
-  ?pickup.distance < 10
-    equipR star
+    ?pickup.distance < 10
+        equipR star
 
-  /*
-  *** Skeleton Arm Activation ***
-  Modified from "Wild Ride - Challenge IV" by Martian Rex
-  Source: https://steamcommunity.com/app/603390/discussions/0/2961670721743547882/
-  */
-  ?item.GetCooldown("skeleton_arm") <= 0
-    equip skeleton arm
-    ?item.CanActivate("skeleton_arm") &
-    ^foe.hp + foe.armor <= 10 // within kill range
-      activate R
+    /*
+    *** Skeleton Arm Activation ***
+    Modified from "Wild Ride - Challenge IV" by Martian Rex
+    Source: https://steamcommunity.com/app/603390/discussions/0/2961670721743547882/
+    */
+    ?item.GetCooldown("skeleton_arm") <= 0
+        equip skeleton arm
+        ?item.CanActivate("skeleton_arm") &
+        ^foe.hp + foe.armor <= 10 // within kill range
+            activate R
