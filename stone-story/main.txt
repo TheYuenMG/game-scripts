@@ -6,6 +6,13 @@
 // -Bezerra, the Sage
 
 
+/*
+Stonescript File for Stone Story 4.32.3
+Otis Yuen (TheYuenMG)
+Last modified on 25 June 2026
+*/
+
+
 // *** Community Scripts ***
 import Fishing
 import Hats/Skully
