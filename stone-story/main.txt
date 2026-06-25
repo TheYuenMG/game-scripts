@@ -65,6 +65,17 @@ import UI/MindstoneButton
         equipL exp
         equipR vig sword
 
+        /*
+        *** Skeleton Arm Activation ***
+        Modified from "Wild Ride - Challenge IV" by Martian Rex
+        Source: https://steamcommunity.com/app/603390/discussions/0/2961670721743547882/
+        */
+        ?item.GetCooldown("skeleton_arm") <= 0
+            equip skeleton arm
+            ?item.CanActivate("skeleton_arm") &
+            ^foe.hp + foe.armor <= 10 // within kill range
+                activate R
+
     ?foe = boss
         equipL vig sword
         equip com shield
@@ -76,14 +87,3 @@ import UI/MindstoneButton
 
     ?pickup.distance < 10
         equipR star
-
-    /*
-    *** Skeleton Arm Activation ***
-    Modified from "Wild Ride - Challenge IV" by Martian Rex
-    Source: https://steamcommunity.com/app/603390/discussions/0/2961670721743547882/
-    */
-    ?item.GetCooldown("skeleton_arm") <= 0
-        equip skeleton arm
-        ?item.CanActivate("skeleton_arm") &
-        ^foe.hp + foe.armor <= 10 // within kill range
-            activate R
