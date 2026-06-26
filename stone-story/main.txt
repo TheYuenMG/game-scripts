@@ -31,8 +31,8 @@ import UI/MindstoneButton
     equip @item.right@
 
 
-// *** Deadwood Blade of the Fallen God R&D ***
-?loc = deadwood
+// *** Forest Blade of the Fallen God R&D ***
+?loc = forest
     ?foe.distance <= 5 & item.potion = exp
         activate potion
 
@@ -69,12 +69,6 @@ import UI/MindstoneButton
 
     ?foe.distance > 18
         equipL trisk
-
-    ?pickup.distance < 10
-        equipR star
-
-    ?harvest.distance < 10
-        equip hatchet
 
 
 // *** Caves Tar Farming ***
