@@ -56,7 +56,7 @@ import UI/MindstoneButton
         equip hatchet
 
 
-// *** Caves Skeleton Arm R&D ***
+// *** Caves Tar Farming ***
 ?loc = caves
     ?hp <= maxhp * 0.2 & item.potion = heal
         activate potion
@@ -64,17 +64,6 @@ import UI/MindstoneButton
     ?foe.distance <= 18
         equipL exp
         equipR vig sword
-
-        /*
-        *** Skeleton Arm Activation ***
-        Modified from "Wild Ride - Challenge IV" by Martian Rex
-        Source: https://steamcommunity.com/app/603390/discussions/0/2961670721743547882/
-        */
-        ?item.GetCooldown("skeleton_arm") <= 0
-            equip skeleton arm
-            ?item.CanActivate("skeleton_arm") &
-            ^foe.hp + foe.armor <= 10 // within kill range
-                activate R
 
     ?foe = boss
         equipL vig sword
