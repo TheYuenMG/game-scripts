@@ -31,7 +31,7 @@ import UI/MindstoneButton
     equip @item.right@
 
 
-// *** Deadwood Experience Farming ***
+// *** Deadwood Blade of the Fallen God R&D ***
 ?loc = deadwood
     ?foe.distance <= 5 & item.potion = exp
         activate potion
@@ -39,6 +39,21 @@ import UI/MindstoneButton
     ?foe.distance <= 18
         equipL exp
         equipR vig sword
+
+        /*
+        *** Blade of the Fallen God Activation ***
+        Modified from "Titan's Trial - Reboot -
+        Challenge V" by Martian Rex
+        Source: https://steamcommunity.com/app/
+        603390/discussions/0/3122676324260194659/
+        */
+        // "Because Rex needs SOMETHING with
+        // which to market the game." - TheYuenMG
+        ?item.GetCooldown("blade") <= 0 &
+        ^foe.count >= 5
+        // to Smite groups of creatures at once
+            equip Blade of
+            activate R
 
     ?foe = boss
         equipL vig sword
