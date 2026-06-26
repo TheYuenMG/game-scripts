@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 25 June 2026
+Last modified on 26 June 2026
 */
 
 
@@ -42,18 +42,24 @@ import UI/MindstoneButton
 
         /*
         *** Blade of the Fallen God Activation ***
-        Modified from "Titan's Trial - Reboot -
-        Challenge V" by Martian Rex
+        Modified from ＂Titan's Trial - Reboot -
+        Challenge V＂ by Martian Rex
         Source: https://steamcommunity.com/app/
         603390/discussions/0/3122676324260194659/
         */
-        // "Because Rex needs SOMETHING with
-        // which to market the game." - TheYuenMG
-        ?item.GetCooldown("blade") <= 0 &
+        // ＂Because Rex needs SOMETHING with
+        // which to market the game.＂ - TheYuenMG
+        ?item.GetCooldown(＂blade＂) <= 0 &
         ^foe.count >= 5
         // to Smite groups of creatures at once
             equip Blade of
             activate R
+
+        // mutated runes for Vigor Sword, Stun is
+        // inefficient but so is re-mutation
+        ?buffs.GetCount(＂smite＂) > 0
+            equip grappling
+            equip com shield
 
     ?foe = boss
         equipL vig sword
