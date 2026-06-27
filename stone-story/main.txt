@@ -41,15 +41,15 @@ import UI/MindstoneButton
         equipR vig wand
 
         // wait for R.I.P. to spawn Smite fodder
-        ?foe = ghost_tomb &
+        ?screen.i = 5 &
         // avoid being a squatting duck, though
-        ^item.GetCooldown("blade") <= 0
+        ^item.GetCooldown(＂blade＂) <= 0
             equipL quest
             equip com shield
 
             // 10 at a time should be enough,
             // adjust number as needed
-            ?item.GetCooldown("blade") <= 0 &
+            ?item.GetCooldown(＂blade＂) <= 0 &
             ^foe.count >= 10
                 equip Blade of
                 activate R
@@ -59,7 +59,7 @@ import UI/MindstoneButton
         equip com shield
 
         // Save the Date for good ol' Pally-Wally!
-        ?buffs.GetCount("smite") > 0
+        ?buffs.GetCount(＂smite＂) > 0
             /*
             - Rune Sword for fast attack speed
             - Ice because Chill debuff stacks,
