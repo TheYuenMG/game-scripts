@@ -7,7 +7,7 @@ Modified from "Forest Blade of the Fallen God
 R&D" by Otis Yuen
 Source: https://github.com/TheYuenMG/
 game-scripts/tree/main/stone-story/locations/
-forest.txt
+forest_OUTDATED.txt
 */
 
 
@@ -19,31 +19,34 @@ forest.txt
         equipL exp
         equipR vig wand
 
-        /*
-        *** Blade of the Fallen God Activation ***
-        Modified from "Titan's Trial - Reboot -
-        Challenge V" by Martian Rex
-        Source: https://steamcommunity.com/app/
-        603390/discussions/0/3122676324260194659/
-        */
-        // "Because Rex needs SOMETHING with
-        // which to market the game." - TheYuenMG
-        ?item.GetCooldown("blade") <= 0 &
-        ^foe.count >= 5
-        // to Smite groups of creatures at once
-            equip Blade of
-            activate R
-
-        // ghosts deal too much damage and are
-        // also immune to physical damage
-        ?buffs.GetCount("smite") > 0
+        // wait for R.I.P. to spawn Smite fodder
+        ?foe = ghost_tomb &
+        // avoid being a squatting duck, though
+        ^item.GetCooldown("blade") <= 0
+            equipL quest
             equip com shield
-            ?foe.distance < 18
-                equipL quest
+
+            // 10 at a time should be enough,
+            // adjust number as needed
+            ?item.GetCooldown("blade") <= 0 &
+            ^foe.count >= 10
+                equip Blade of
+                activate R
 
     ?foe = boss
         equipL vig wand
         equip com shield
+
+        // Save the Date for good ol' Pally-Wally!
+        ?buffs.GetCount("smite") > 0
+            /*
+            - Rune Sword for fast attack speed
+            - Ice because Chill debuff stacks,
+            unlike Burn or Poison for some reason
+            - *0 to ensure all Smite stacks used
+            */
+            equipL *0 ice sword
+
         ?foe.hp <= foe.maxhp * 0.1
             equipR exp
 
