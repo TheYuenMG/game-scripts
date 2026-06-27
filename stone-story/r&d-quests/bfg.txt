@@ -14,16 +14,25 @@ market the game." - TheYuenMG
 
 
 // *** Blade of the Fallen God R&D, Part 4 ***
-?item.GetCooldown("blade") <= 0 & foe.count >= 5
-// to Smite groups of creatures at once
-    equip Blade of
-    activate R
+// wait at spawner screen for Smite fodder
+// only if cooldown finished
+?screen.i = 5 & item.GetCooldown("blade") <= 0
+    equipL quest
+    equip com shield
+
+    // 10 at a time should be enough, adjust
+    // number as needed
+    ?foe.count >= 10
+        equip Blade of
+        activate R
 
 
 // *** Blade of the Fallen God R&D, Part 5 ***
-// ghosts deal too much damage and are also
-// immune to physical damage
 ?buffs.GetCount("smite") > 0
-    equip com shield
-    ?foe.distance < 18
-        equipL quest
+    /*
+    - Rune Sword for fast attack speed
+    - Ice because Chill debuff stacks,
+    unlike Burn or Poison for some reason
+    - *0 to ensure all Smite stacks used
+    */
+    equipL *0 ice sword
