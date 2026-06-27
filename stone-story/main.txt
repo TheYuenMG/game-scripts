@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 26 June 2026
+Last modified on 27 June 2026
 */
 
 
@@ -29,66 +29,3 @@ import UI/MindstoneButton
 ?item.right.state = 3
     equipR *0 shield //trash
     equip @item.right@
-
-
-// *** Crypt Blade of the Fallen God R&D ***
-?loc = crypt
-    ?hp <= maxhp * 0.2 & item.potion = heal
-        activate potion
-
-    ?foe.distance <= 18
-        equipL exp
-        equipR vig wand
-
-        /*
-        *** Blade of the Fallen God Activation ***
-        Modified from ＂Titan's Trial - Reboot -
-        Challenge V＂ by Martian Rex
-        Source: https://steamcommunity.com/app/
-        603390/discussions/0/3122676324260194659/
-        */
-        // ＂Because Rex needs SOMETHING with
-        // which to market the game.＂ - TheYuenMG
-        ?item.GetCooldown(＂blade＂) <= 0 &
-        ^foe.count >= 5
-        // to Smite groups of creatures at once
-            equip Blade of
-            activate R
-
-        // ghosts deal too much damage and are
-        // also immune to physical damage
-        ?buffs.GetCount(＂smite＂) > 0
-            equip com shield
-            ?foe.distance < 18
-                equipL quest
-
-    ?foe = boss
-        equipL vig wand
-        equip com shield
-        ?foe.hp <= foe.maxhp * 0.1
-            equipR exp
-
-    ?foe.distance > 18
-        equipL trisk
-
-
-// *** Caves Tar Farming ***
-?loc = caves
-    ?hp <= maxhp * 0.2 & item.potion = heal
-        activate potion
-
-    ?foe.distance <= 18
-        equipL exp
-        equipR vig sword
-
-    ?foe = boss
-        equipL vig sword
-        equip com shield
-        ?foe.hp <= foe.maxhp * 0.1
-            equipR exp
-
-    ?foe.distance > 18
-        equipL trisk
-
-    ?pickup.distance < 10
-        equipR star
