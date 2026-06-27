@@ -1,0 +1,51 @@
+/*
+Crypt Blade of the Fallen God R&D
+Otis Yuen (TheYuenMG)
+Last modified on 27 June 2026
+
+Modified from "Forest Blade of the Fallen God
+R&D" by Otis Yuen
+Source: https://github.com/TheYuenMG/
+game-scripts/tree/main/stone-story/locations/
+forest.txt
+*/
+
+
+?loc = crypt
+    ?hp <= maxhp * 0.2 & item.potion = heal
+        activate potion
+
+    ?foe.distance <= 18
+        equipL exp
+        equipR vig wand
+
+        /*
+        *** Blade of the Fallen God Activation ***
+        Modified from "Titan's Trial - Reboot -
+        Challenge V" by Martian Rex
+        Source: https://steamcommunity.com/app/
+        603390/discussions/0/3122676324260194659/
+        */
+        // "Because Rex needs SOMETHING with
+        // which to market the game." - TheYuenMG
+        ?item.GetCooldown("blade") <= 0 &
+        ^foe.count >= 5
+        // to Smite groups of creatures at once
+            equip Blade of
+            activate R
+
+        // ghosts deal too much damage and are
+        // also immune to physical damage
+        ?buffs.GetCount("smite") > 0
+            equip com shield
+            ?foe.distance < 18
+                equipL quest
+
+    ?foe = boss
+        equipL vig wand
+        equip com shield
+        ?foe.hp <= foe.maxhp * 0.1
+            equipR exp
+
+    ?foe.distance > 18
+        equipL trisk
