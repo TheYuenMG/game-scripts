@@ -12,15 +12,15 @@ forest_OUTDATED.txt
 
 
 ?loc = crypt
-    ?hp <= maxhp * 0.2 & item.potion = heal
+    ?foe.distance <= 18 & item.potion = exp
         activate potion
 
     ?foe.distance <= 18
-        equipL exp
+        equipL ki
         equipR vig wand
 
         // wait for R.I.P. to spawn Smite fodder
-        ?foe = ghost_tomb &
+        ?screen.i = 5 &
         // avoid being a squatting duck, though
         ^item.GetCooldown("blade") <= 0
             equipL quest
@@ -46,9 +46,6 @@ forest_OUTDATED.txt
             - *0 to ensure all Smite stacks used
             */
             equipL *0 ice sword
-
-        ?foe.hp <= foe.maxhp * 0.1
-            equipR exp
 
     ?foe.distance > 18
         equipL trisk
