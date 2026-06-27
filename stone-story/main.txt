@@ -29,3 +29,47 @@ import UI/MindstoneButton
 ?item.right.state = 3
     equipR *0 shield //trash
     equip @item.right@
+
+
+// *** Crypt Blade of the Fallen God R&D ***
+?loc = crypt
+    ?hp <= maxhp * 0.2 & item.potion = heal
+        activate potion
+
+    ?foe.distance <= 18
+        equipL exp
+        equipR vig wand
+
+        // wait for R.I.P. to spawn Smite fodder
+        ?foe = ghost_tomb &
+        // avoid being a squatting duck, though
+        ^item.GetCooldown("blade") <= 0
+            equipL quest
+            equip com shield
+
+            // 10 at a time should be enough,
+            // adjust number as needed
+            ?item.GetCooldown("blade") <= 0 &
+            ^foe.count >= 10
+                equip Blade of
+                activate R
+
+    ?foe = boss
+        equipL vig wand
+        equip com shield
+
+        // Save the Date for good ol' Pally-Wally!
+        ?buffs.GetCount("smite") > 0
+            /*
+            - Rune Sword for fast attack speed
+            - Ice because Chill debuff stacks,
+            unlike Burn or Poison for some reason
+            - *0 to ensure all Smite stacks used
+            */
+            equipL *0 ice sword
+
+        ?foe.hp <= foe.maxhp * 0.1
+            equipR exp
+
+    ?foe.distance > 18
+        equipL trisk
