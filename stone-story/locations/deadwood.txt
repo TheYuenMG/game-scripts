@@ -1,0 +1,33 @@
+/*
+Deadwood Experience Farming
+Otis Yuen (TheYuenMG)
+Last modified on 27 June 2026
+
+Modified from "Introduction to the Mind Stone"
+by Martian Rex
+Source: https://stonestoryrpg.com/stonescript/
+*/
+
+
+?loc = deadwood
+    ?foe.distance <= 5 & item.potion = exp
+        activate potion
+
+    ?foe.distance <= 18
+        equipL exp
+        equipR vig sword
+
+    ?foe = boss
+        equipL vig sword
+        equip com shield
+        ?foe.hp <= foe.maxhp * 0.1
+            equipR exp
+
+    ?foe.distance > 18
+        equipL trisk
+
+    ?pickup.distance < 10
+        equipR star
+
+    ?harvest.distance < 10
+        equip hatchet
