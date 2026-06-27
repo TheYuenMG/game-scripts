@@ -58,7 +58,7 @@ import UI/MindstoneButton
         // ghosts deal too much damage and are
         // also immune to physical damage
         ?buffs.GetCount(＂smite＂) > 0
-            equip quest
+            equipL quest
             equip com shield
 
     ?foe = boss
