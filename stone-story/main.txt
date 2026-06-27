@@ -31,14 +31,14 @@ import UI/MindstoneButton
     equip @item.right@
 
 
-// *** Forest Blade of the Fallen God R&D ***
-?loc = forest
-    ?foe.distance <= 5 & item.potion = exp
+// *** Crypt Blade of the Fallen God R&D ***
+?loc = crypt
+    ?hp <= maxhp * 0.2 & item.potion = heal
         activate potion
 
     ?foe.distance <= 18
         equipL exp
-        equipR vig sword
+        equipR vig wand
 
         /*
         *** Blade of the Fallen God Activation ***
@@ -55,14 +55,14 @@ import UI/MindstoneButton
             equip Blade of
             activate R
 
-        // mutated runes for Vigor Sword, Stun is
-        // inefficient but so is re-mutation
+        // ghosts deal too much damage and are
+        // also immune to physical damage
         ?buffs.GetCount(＂smite＂) > 0
-            equip grappling
+            equip quest
             equip com shield
 
     ?foe = boss
-        equipL vig sword
+        equipL vig wand
         equip com shield
         ?foe.hp <= foe.maxhp * 0.1
             equipR exp
