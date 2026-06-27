@@ -40,17 +40,16 @@ import UI/MindstoneButton
         equipL ki
         equipR vig wand
 
-        // wait for R.I.P. to spawn Smite fodder
+        // wait at R.I.P. screen for Smite fodder
+        // only if cooldown finished
         ?screen.i = 5 &
-        // avoid being a squatting duck, though
         ^item.GetCooldown(＂blade＂) <= 0
             equipL quest
             equip com shield
 
             // 10 at a time should be enough,
             // adjust number as needed
-            ?item.GetCooldown(＂blade＂) <= 0 &
-            ^foe.count >= 10
+            ?foe.count >= 10
                 equip Blade of
                 activate R
 
