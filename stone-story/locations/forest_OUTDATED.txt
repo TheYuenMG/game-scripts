@@ -1,0 +1,61 @@
+/*
+Forest Blade of the Fallen God R&D
+Otis Yuen (TheYuenMG)
+Last modified on 27 June 2026
+
+Modified from "Deadwood Experience Farming" by
+Otis Yuen
+Source: https://github.com/TheYuenMG/
+game-scripts/tree/main/stone-story/locations/
+deadwood.txt
+
+NOTE: This script is outdated, refer to "Crypt
+Blade of the Fallen God R&D" for current Smite
+damage farming
+*/
+
+
+// *** To-Do List ***
+/*
+ - [ ] TODO: Remove Blade of the Fallen God activation script
+ - [ ] TODO: Update to usable standards for Ki and Vigor farming
+*/
+
+
+?loc = forest
+    ?foe.distance <= 5 & item.potion = exp
+        activate potion
+
+    ?foe.distance <= 18
+        equipL exp
+        equipR vig sword
+
+        /*
+        *** Blade of the Fallen God Activation ***
+        Modified from "Titan's Trial - Reboot -
+        Challenge V" by Martian Rex
+        Source: https://steamcommunity.com/app/
+        603390/discussions/0/3122676324260194659/
+        */
+        // "Because Rex needs SOMETHING with
+        // which to market the game." - TheYuenMG
+        ?item.GetCooldown("blade") <= 0 &
+        ^foe.count >= 5
+        // to Smite groups of creatures at once
+            equip Blade of
+            activate R
+
+        // mutated runes for Vigor Sword, Stun is
+        // inefficient but so is re-mutation
+        ?buffs.GetCount("smite") > 0
+            equip grappling
+            equip com shield
+
+    ?foe = boss
+        equipL vig sword
+        equip com shield
+        ?foe.hp <= foe.maxhp * 0.1
+            equipR exp
+
+    ?foe.distance > 18
+        equipL trisk
