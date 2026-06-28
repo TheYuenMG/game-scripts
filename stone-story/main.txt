@@ -37,42 +37,37 @@ import UI/MindstoneButton
         activate potion
 
     ?foe.distance <= 18
-        equipL ki
-        equipR vig wand
+        // prepare armor earlier to tank R.I.P
+        equipL vig wand
+        equip com shield
 
         // wait at R.I.P. screen for Smite fodder
-        // only if cooldown finished
-        ?screen.i = 5 &
+        ?screen.i >= 5 &
         ^item.GetCooldown(＂blade＂) <= 0
             equipL quest
             equip com shield
 
-            // 10 at a time should be enough,
-            // adjust number as needed
-            ?foe.count >= 10
+            // check for armor break instead
+            ?armor <= 0
                 equip Blade of
                 activate R
 
-    ?foe = boss
-        equipL vig wand
-        equip com shield
-
-        // Save the Date for good ol' Pally-Wally!
-        ?buffs.GetCount(＂smite＂) > 0
+    // Save the Date for good ol' Pally-Wally!
+    ?foe = boss & buffs.GetCount(＂smite＂) > 0
             /*
             - Rune Sword for fast attack speed
             - Ice because Chill debuff stacks,
             unlike Burn or Poison for some reason
             - *1 to ensure all Smite stacks used
-            - Not *0 to avoid mass-fissure 0* items
+            - Not *0 to avoid mass-fissure 0*
             */
             equipL *1 ice sword
 
     ?foe.distance > 18
         equipL trisk
 
-    // "When in doubt, print it out!" - Agerak, from
-    // the *Stone Story RPG* Discord server
+    // ＂When in doubt, print it out!＂ - Agerak,
+    // from the *Stone Story RPG* Discord server
     >BFG Cooldown: @item.GetCooldown(＂blade＂)@
 
 
