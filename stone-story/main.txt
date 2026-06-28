@@ -63,12 +63,17 @@ import UI/MindstoneButton
             - Rune Sword for fast attack speed
             - Ice because Chill debuff stacks,
             unlike Burn or Poison for some reason
-            - *0 to ensure all Smite stacks used
+            - *1 to ensure all Smite stacks used
+            - Not *0 to avoid mass-fissure 0* items
             */
-            equipL *0 ice sword
+            equipL *1 ice sword
 
     ?foe.distance > 18
         equipL trisk
+
+    // "When in doubt, print it out!" - Agerak, from
+    // the *Stone Story RPG* Discord server
+    >BFG Cooldown: @item.GetCooldown(＂blade＂)@
 
 
 // *** Deadwood Wood Farming ***
