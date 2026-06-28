@@ -47,8 +47,9 @@ import UI/MindstoneButton
             equipL quest
             equip com shield
 
-            // check for armor break instead
-            ?armor <= 0
+            // ability activation condition
+            //?armor <= 0
+            ?foe.count >= 18
                 equip Blade of
                 activate R
 
