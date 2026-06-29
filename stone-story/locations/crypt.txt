@@ -1,7 +1,7 @@
 /*
 Crypt Blade of the Fallen God R&D
 Otis Yuen (TheYuenMG)
-Last modified on 27 June 2026
+Last modified on 29 June 2026
 
 Modified from "Forest Blade of the Fallen God
 R&D" by Otis Yuen
@@ -11,41 +11,38 @@ forest_OUTDATED.txt
 */
 
 
+// *** Crypt Blade of the Fallen God R&D ***
 ?loc = crypt
     ?foe.distance <= 18 & item.potion = exp
         activate potion
 
     ?foe.distance <= 18
-        equipL ki
-        equipR vig wand
-
-        // wait for R.I.P. to spawn Smite fodder
-        ?screen.i = 5 &
-        // avoid being a squatting duck, though
-        ^item.GetCooldown("blade") <= 0
-            equipL quest
-            equip com shield
-
-            // 10 at a time should be enough,
-            // adjust number as needed
-            ?item.GetCooldown("blade") <= 0 &
-            ^foe.count >= 10
-                equip Blade of
-                activate R
-
-    ?foe = boss
+        // prepare armor earlier to tank R.I.P.
         equipL vig wand
         equip com shield
 
-        // Save the Date for good ol' Pally-Wally!
-        ?buffs.GetCount("smite") > 0
+        // wait at R.I.P. screen for Smite fodder
+        ?screen.i >= 5 &
+        ^item.GetCooldown(＂blade＂) <= 0
+            equipL quest
+            equip com shield
+
+            // ability activation condition
+            //?armor <= 0
+            ?foe.count >= 18
+                equip Blade of
+                activate R
+
+    // Save the Date for good ol' Pally-Wally!
+    ?foe = boss & buffs.GetCount(＂smite＂) > 0
             /*
             - Rune Sword for fast attack speed
             - Ice because Chill debuff stacks,
             unlike Burn or Poison for some reason
-            - *0 to ensure all Smite stacks used
+            - *1 to ensure all Smite stacks used
+            - Not *0 to avoid mass-fissure 0*
             */
-            equipL *0 ice sword
+            equipL *1 ice sword
 
     ?foe.distance > 18
         equipL trisk
