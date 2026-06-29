@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 27 June 2026
+Last modified on 29 June 2026
 */
 
 
@@ -29,47 +29,6 @@ import UI/MindstoneButton
 ?item.right.state = 3
     equipR *0 shield //trash
     equip @item.right@
-
-
-// *** Crypt Blade of the Fallen God R&D ***
-?loc = crypt
-    ?foe.distance <= 18 & item.potion = exp
-        activate potion
-
-    ?foe.distance <= 18
-        // prepare armor earlier to tank R.I.P
-        equipL vig wand
-        equip com shield
-
-        // wait at R.I.P. screen for Smite fodder
-        ?screen.i >= 5 &
-        ^item.GetCooldown(＂blade＂) <= 0
-            equipL quest
-            equip com shield
-
-            // ability activation condition
-            //?armor <= 0
-            ?foe.count >= 18
-                equip Blade of
-                activate R
-
-    // Save the Date for good ol' Pally-Wally!
-    ?foe = boss & buffs.GetCount(＂smite＂) > 0
-            /*
-            - Rune Sword for fast attack speed
-            - Ice because Chill debuff stacks,
-            unlike Burn or Poison for some reason
-            - *1 to ensure all Smite stacks used
-            - Not *0 to avoid mass-fissure 0*
-            */
-            equipL *1 ice sword
-
-    ?foe.distance > 18
-        equipL trisk
-
-    // ＂When in doubt, print it out!＂ - Agerak,
-    // from the *Stone Story RPG* Discord server
-    >BFG Cooldown: @item.GetCooldown(＂blade＂)@
 
 
 // *** Deadwood Wood Farming ***
