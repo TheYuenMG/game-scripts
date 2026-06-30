@@ -52,3 +52,22 @@ import UI/MindstoneButton
 
     ?harvest.distance < 10
         equip hatchet
+
+
+// *** Forest Vigor Rune Farming ***
+?loc = forest
+    ?foe.distance <= 18 & item.potion = exp
+        activate potion
+
+    ?foe.distance <= 18
+        equipL vig wand
+        equipR ki
+
+    ?screen.i = 0
+        equip com shield
+
+    ?foe = boss
+        equipL vig hammer
+
+    ?foe.distance > 18
+        equipL trisk
