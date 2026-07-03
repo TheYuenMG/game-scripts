@@ -106,3 +106,6 @@ import UI/MindstoneButton
     :
         equipL vig sword
         equip com shield
+
+
+>Warm Stones: @item.GetCount(warm_stone)@
