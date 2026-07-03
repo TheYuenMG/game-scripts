@@ -56,7 +56,7 @@ import UI/MindstoneButton
 
 // *** Forest Vigor Rune Farming ***
 ?loc = forest
-    ?foe.distance <= 18 & item.potion = exp
+    ?foe = ant_hill & item.potion = exp
         activate potion
 
     ?pickup.distance < 10
