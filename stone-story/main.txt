@@ -82,3 +82,27 @@ import UI/MindstoneButton
     :
         equipL *9 vig wand
         equipR *10 vig wand
+
+
+// *** Plateau Event Farming ***
+?loc = plateau
+    ?hp <= maxhp * 0.2 & item.potion = heal
+        activate potion
+
+    ?pickup.distance < 10
+        equipL star
+
+    :?foe.distance > 18
+        equipL trisk
+        equip com shield
+
+    :?harvest.distance < 10
+        equip shovel
+
+        ?item.GetCooldown(shovel) <= 0 &
+        ^item.CanActivate()
+            activate R
+
+    :
+        equipL vig sword
+        equip com shield
