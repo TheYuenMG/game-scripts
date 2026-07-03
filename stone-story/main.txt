@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 29 June 2026
+Last modified on 3 July 2026
 */
 
 
@@ -59,15 +59,26 @@ import UI/MindstoneButton
     ?foe.distance <= 18 & item.potion = exp
         activate potion
 
-    ?foe.distance <= 18
-        equipL vig wand
-        equipR ki
+    ?pickup.distance < 10
+        equipL star
 
-    ?screen.i = 0
+    :?foe.distance > 18
+        equipL trisk
         equip com shield
 
-    ?foe = boss
-        equipL vig hammer
+    :?foe = boss
 
-    ?foe.distance > 18
-        equipL trisk
+        ?(item.GetCooldown(heavy_hammer) <= 0 &
+        ^item.CanActivate()) |
+        ^(item.right = heavy hammer &
+        ^item.right.state = 2)
+            equip heavy hammer
+            activate R
+
+        :
+            equipL poi hammer
+            equip com shield
+
+    :
+        equipL *9 vig wand
+        equipR *10 vig wand
