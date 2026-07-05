@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 3 July 2026
+Last modified on 5 July 2026
 */
 
 
@@ -65,7 +65,7 @@ import UI/MindstoneButton
 
     :?foe.distance > 18
         equipL trisk
-        equip com shield
+        equip poi shield
 
     :?foe = boss
 
@@ -78,7 +78,7 @@ import UI/MindstoneButton
 
         :
             equipL poi hammer
-            equip com shield
+            equip poi shield
 
     :
         equipL *9 vig wand
