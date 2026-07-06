@@ -18,6 +18,7 @@ import Fishing
 import Hats/Skully
 import Pets/Boo
 import Pets/Frog
+import UI/FoeStateTracker
 import UI/MindstoneButton
 
 
