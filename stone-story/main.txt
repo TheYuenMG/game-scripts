@@ -51,7 +51,7 @@ import UI/MindstoneButton
         equipL trisk
         equip com shield
 
-    :?foe = boss & foe.distance <= 5
+    :?foe = boss & foe.distance <= 10
 
         ?(item.GetCooldown(bardiche) <= 0 &
         ^item.CanActivate()) |
