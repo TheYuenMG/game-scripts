@@ -1,0 +1,34 @@
+/*
+Plateau Event Farming
+Otis Yuen (TheYuenMG)
+Last modified on 5 July 2026
+
+Modified from "The Basics of Stonescript. How
+to Structure Your Code and Activate Items" by
+Incoherent Toast
+Source: https://www.youtube.com/
+watch?v=o-oBNx192_I
+*/
+
+
+?loc = plateau
+    ?hp <= maxhp * 0.2 & item.potion = heal
+        activate potion
+
+    ?harvest.distance < 10
+        equip shovel
+
+        ?item.GetCooldown(shovel) <= 0 &
+        ^item.CanActivate()
+            activate R
+
+    :?pickup.distance < 10
+        equipL star
+
+    :?foe.distance > 18
+        equipL trisk
+        equip com shield
+
+    :
+        equipL vig sword
+        equip com shield
