@@ -37,22 +37,36 @@ import UI/MindstoneButton
     ?foe.distance <= 5 & item.potion = exp
         activate potion
 
-    ?foe.distance <= 18
-        equipL ki
-        equipR vig sword
-
-    ?foe = boss
-        equipL vig sword
-        equip com shield
-
-    ?foe.distance > 18
-        equipL trisk
-
-    ?pickup.distance < 10
-        equipR star
-
     ?harvest.distance < 10
         equip hatchet
+
+        ?item.GetCooldown(hatchet) <= 0 &
+        ^item.CanActivate()
+            activate R
+
+    :?pickup.distance < 10
+        equipL star
+
+    :?foe.distance > 18
+        equipL trisk
+        equip com shield
+
+    :?foe = boss
+
+        ?(item.GetCooldown(bardiche) <= 0 &
+        ^item.CanActivate()) |
+        ^(item.right = bardiche &
+        ^item.right.state = 2)
+            equip bardiche
+            activate R
+
+        :
+            equipL vig sword
+            equip com shield
+
+    :
+        equipL ki
+        equipR vig sword
 
 
 // *** Forest Vigor Rune Farming ***
