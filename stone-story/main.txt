@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 5 July 2026
+Last modified on 6 July 2026
 */
 
 
@@ -34,9 +34,6 @@ import UI/MindstoneButton
 
 // *** Deadwood Wood Farming ***
 ?loc = deadwood
-    ?foe.distance <= 5 & item.potion = exp
-        activate potion
-
     ?harvest.distance < 10
         equip hatchet
 
@@ -96,8 +93,8 @@ import UI/MindstoneButton
             equip poi shield
 
     :
-        equipL *9 vig wand
-        equipR *10 vig wand
+        equipL +0 vig wand
+        equipR vig wand
 
 
 // *** Plateau Event Farming ***
