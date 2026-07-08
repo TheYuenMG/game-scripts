@@ -9,7 +9,15 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 7 July 2026
+Last modified on 8 July 2026
+*/
+
+
+// *** Custom Imports ***
+/*
+sys.SetFileUrl("https://raw.githubusercontent
+^.com/TheYuenMG/game-scripts/refs/heads/main/
+^stone-story/Stonescript/")
 */
 
 
