@@ -192,7 +192,7 @@ func OpenSettings()
     HealingToggleButton.text = ""
     HealingToggleButton.style = StyleInvisible
     HealingToggleButton.SetDown(CheckingHealingToggle)
-
+ 
     CloseSettings = Create_UI_Element( ui.AddButton() ,21,0,3)
     CloseSettings.h = 1
     CloseSettings.text = "[x]"
