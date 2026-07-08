@@ -1,7 +1,7 @@
 /*
 Forest Vigor Rune Farming
 Otis Yuen (TheYuenMG)
-Last modified on 5 July 2026
+Last modified on 7 July 2026
 
 Modified from "Deadwood Wood Farming" by
 Otis Yuen
@@ -37,5 +37,5 @@ deadwood.txt
             equip poi shield
 
     :
-        equipL *9 vig wand
-        equipR *10 vig wand
+        equipL +0 vig wand
+        equipR vig wand
