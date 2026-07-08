@@ -77,7 +77,7 @@ var z
 
   z = ""
   for a = 1..MaxListLength
-    z += "\nâ”‚"
+    z += "\n│"
   Label = Create_UI_Element( ui.AddText("S : T"+z),-5,0,20)
   Label.align = center
   Label.color = #808080
@@ -93,13 +93,13 @@ var z
 
   DragButton = Create_UI_Element( ui.AddButton() ,-1,0,3)
   DragButton.h = 1
-  DragButton.text = "Ê˜"
+  DragButton.text = "ʘ"
   DragButton.style = StyleInvisible
   DragButton.SetDown(DragToggle)
 
   SettingsButton = Create_UI_Element( ui.AddButton() ,7,0,3)
   SettingsButton.h = 1
-  SettingsButton.text = "â‰¡"
+  SettingsButton.text = "≡"
   SettingsButton.style = StyleInvisible
   SettingsButton.SetDown(OpenSettings)
 
@@ -192,7 +192,7 @@ func OpenSettings()
     HealingToggleButton.text = ""
     HealingToggleButton.style = StyleInvisible
     HealingToggleButton.SetDown(CheckingHealingToggle)
- 
+
     CloseSettings = Create_UI_Element( ui.AddButton() ,21,0,3)
     CloseSettings.h = 1
     CloseSettings.text = "[x]"
@@ -220,7 +220,7 @@ func GetSettingsText()
   var ReturnText = ascii
 #######Settings
 #List Length: [#] [#]
-#[color=#606060]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[/color]
+#[color=#606060]─────────────────────[/color]
 #####Event Logger:
 #Damage received [{0}]
 #Player Debuffed [{1}]
