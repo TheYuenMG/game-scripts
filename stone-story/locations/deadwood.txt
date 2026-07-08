@@ -1,7 +1,7 @@
 /*
 Deadwood Wood Farming
 Otis Yuen (TheYuenMG)
-Last modified on 5 July 2026
+Last modified on 7 July 2026
 
 Modified from "Introduction to the Mind Stone"
 by Martian Rex
@@ -10,9 +10,6 @@ Source: https://stonestoryrpg.com/stonescript/
 
 
 ?loc = deadwood
-    ?foe.distance <= 5 & item.potion = exp
-        activate potion
-
     ?harvest.distance < 10
         equip hatchet
 
@@ -27,7 +24,7 @@ Source: https://stonestoryrpg.com/stonescript/
         equipL trisk
         equip com shield
 
-    :?foe = boss
+    :?foe = boss & foe.distance <= 10
 
         ?(item.GetCooldown(bardiche) <= 0 &
         ^item.CanActivate()) |
