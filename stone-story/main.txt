@@ -26,7 +26,7 @@ import Cosmetics/Hats/Skully
 import Cosmetics/PetBoo
 import Cosmetics/PetFrog
 import Fishing
-import UI/FoeStateTracker
+//import UI/FoeStateTracker // broken
 import UI/MindstoneButton
 
 
