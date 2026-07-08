@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 6 July 2026
+Last modified on 7 July 2026
 */
 
 
@@ -137,6 +137,10 @@ import UI/MindstoneButton
     ^foe.time >= 67
         ?foe.time = 67
             equipL mind
+
+    :?foe = phase3 & foe.state >= 100
+        equipL poi hammer
+        equipR vig sword
 
     :
         equipL vig sword
