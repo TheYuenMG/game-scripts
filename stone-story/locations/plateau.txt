@@ -1,7 +1,7 @@
 /*
 Plateau Event Farming
 Otis Yuen (TheYuenMG)
-Last modified on 5 July 2026
+Last modified on 7 July 2026
 
 Modified from "The Basics of Stonescript. How
 to Structure Your Code and Activate Items" by
@@ -28,6 +28,32 @@ watch?v=o-oBNx192_I
     :?foe.distance > 18
         equipL trisk
         equip com shield
+
+    :?foe = phase2
+        var rune = stone
+
+        ?foe = vigor
+            rune = poison
+        ?foe = poison
+            rune = ice
+        ?foe = ice
+            rune = fire
+        ?foe = fire
+            rune = aether
+        ?foe = aether
+            rune = vigor
+
+        equipL @rune@ sword
+        equipR com shield
+
+    :?foe = phase3 & foe.state = 115 &
+    ^foe.time >= 67
+        ?foe.time = 67
+            equipL mind
+
+    :?foe = phase3 & foe.state >= 100
+        equipL poi hammer
+        equipR vig sword
 
     :
         equipL vig sword
