@@ -22,10 +22,10 @@ sys.SetFileUrl("https://raw.githubusercontent
 
 
 // *** Community Scripts ***
+import Cosmetics/Hats/Skully
+import Cosmetics/PetBoo
+import Cosmetics/PetFrog
 import Fishing
-import Hats/Skully
-import Pets/Boo
-import Pets/Frog
 import UI/FoeStateTracker
 import UI/MindstoneButton
 
