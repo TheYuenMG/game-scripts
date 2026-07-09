@@ -19,14 +19,14 @@ deadwood.txt
 ?pickup.distance < 10
     equipL star
 
-:?foe.distance > 18
-    equipL trisk
-    equip poi shield
-
 :?screen.i >= 5 & item.CanActivate() &
 ^item.GetCooldown(blade) <= 0
     equip Blade of
     activate R
+
+:?foe.distance > 18
+    equipL trisk
+    equip poi shield
 
 :?foe = boss
 
