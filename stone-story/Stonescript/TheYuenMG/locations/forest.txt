@@ -11,31 +11,40 @@ deadwood.txt
 */
 
 
-?loc = forest
-    ?foe = ant_hill & foe.distance <= 18 &
-    ^item.potion = exp
-        activate potion
+?foe = ant_hill & foe.distance <= 18 &
+^item.potion = exp
+    activate potion
 
-    ?pickup.distance < 10
-        equipL star
+?pickup.distance < 10
+    equipL star
 
-    :?foe.distance > 18
-        equipL trisk
-        equip poi shield
+:?foe.distance > 18
+    equipL trisk
+    equip poi shield
 
-    :?foe = boss
+:?screen.i >= 5
+    equipL quest
+    equip poi shield
 
-        ?(item.GetCooldown(heavy_hammer) <= 0 &
-        ^item.CanActivate()) |
-        ^(item.right = heavy hammer &
-        ^item.right.state = 2)
-            equip heavy hammer
-            activate R
+    ?item.GetCooldown(blade) <= 0 &
+    ^item.CanActivate() &
+    ^buffs.GetTime(experience) <= 30
+        equip Blade of
+        activate R
 
-        :
-            equipL poi hammer
-            equip poi shield
+:?foe = boss
+
+    ?(item.GetCooldown(heavy_hammer) <= 0 &
+    ^item.CanActivate()) |
+    ^(item.right = heavy hammer &
+    ^item.right.state = 2)
+        equip heavy hammer
+        activate R
 
     :
-        equipL +0 vig wand
-        equipR vig wand
+        equipL poi hammer
+        equip poi shield
+
+:
+    equipL +0 vig wand
+    equipR vig wand
