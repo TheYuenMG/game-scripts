@@ -11,8 +11,9 @@ deadwood.txt
 */
 
 
-?foe = ant_hill & foe.distance <= 18 &
-^item.potion = exp
+?((foe = ant_hill & foe.distance <= 18 &
+^item.potion = exp) | screen.i >= 4) &
+^item.CanActivate()
     activate potion
 
 ?pickup.distance < 10
@@ -22,15 +23,11 @@ deadwood.txt
     equipL trisk
     equip poi shield
 
-:?screen.i >= 5
-    equipL quest
-    equip poi shield
-
-    ?item.GetCooldown(blade) <= 0 &
-    ^item.CanActivate() &
-    ^buffs.GetTime(experience) <= 30
-        equip Blade of
-        activate R
+:?screen.i >= 5 & item.CanActivate() &
+^item.GetCooldown(blade) <= 0 &
+^buffs.GetTime(experience) <= 30
+    equip Blade of
+    activate R
 
 :?foe = boss
 
