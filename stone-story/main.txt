@@ -52,4 +52,6 @@ import UI/MindstoneButton
 ?loc = plateau
     import TheYuenMG/locations/plateau
 
->Warm Stones: @item.GetCount(warm_stone)@
+// *** Summer Moonstice Event Currency ***
+>`0,0,#yellow,☼
+>`1,0,@item.GetCount(warm_stone)@
