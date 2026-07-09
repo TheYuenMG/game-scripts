@@ -19,8 +19,9 @@ deadwood.txt
 ?pickup.distance < 10
     equipL star
 
-:?screen.i >= 5 & item.CanActivate() &
-^item.GetCooldown(blade) <= 0
+:?screen.i >= 5 & foe.count >= 20 &
+^item.GetCooldown(blade) <= 0 &
+^item.CanActivate()
     equip Blade of
     activate R
 
