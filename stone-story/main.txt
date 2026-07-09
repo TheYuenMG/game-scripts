@@ -42,91 +42,14 @@ import UI/MindstoneButton
 
 // *** Deadwood Wood Farming ***
 ?loc = deadwood
-    ?harvest.distance < 10
-        equip hatchet
-
-        ?item.GetCooldown(hatchet) <= 0 &
-        ^item.CanActivate()
-            activate R
-
-    :?pickup.distance < 10
-        equipL star
-
-    :?foe.distance > 18
-        equipL trisk
-        equip com shield
-
-    :?foe = boss & foe.distance <= 10
-
-        ?(item.GetCooldown(bardiche) <= 0 &
-        ^item.CanActivate()) |
-        ^(item.right = bardiche &
-        ^item.right.state = 2)
-            equip bardiche
-            activate R
-
-        :
-            equipL vig sword
-            equip com shield
-
-    :
-        equipL ki
-        equipR vig sword
-
+    import TheYuenMG/locations/deadwood
 
 // *** Forest Vigor Rune Farming ***
 ?loc = forest
     import TheYuenMG/locations/forest
 
-
 // *** Plateau Event Farming ***
 ?loc = plateau
-    ?hp <= maxhp * 0.2 & item.potion = heal
-        activate potion
-
-    ?harvest.distance < 10
-        equip shovel
-
-        ?item.GetCooldown(shovel) <= 0 &
-        ^item.CanActivate()
-            activate R
-
-    :?pickup.distance < 10
-        equipL star
-
-    :?foe.distance > 18
-        equipL trisk
-        equip com shield
-
-    :?foe = phase2
-        var rune = stone
-
-        ?foe = vigor
-            rune = poison
-        ?foe = poison
-            rune = ice
-        ?foe = ice
-            rune = fire
-        ?foe = fire
-            rune = aether
-        ?foe = aether
-            rune = vigor
-
-        equipL @rune@ sword
-        equipR com shield
-
-    :?foe = phase3 & foe.state = 115 &
-    ^foe.time >= 67
-        ?foe.time = 67
-            equipL mind
-
-    :?foe = phase3 & foe.state >= 100
-        equipL poi hammer
-        equipR vig sword
-
-    :
-        equipL vig sword
-        equip com shield
-
+    import TheYuenMG/locations/plateau
 
 >Warm Stones: @item.GetCount(warm_stone)@
