@@ -1,7 +1,7 @@
 /*
 Deadwood Wood Farming
 Otis Yuen (TheYuenMG)
-Last modified on 7 July 2026
+Last modified on 8 July 2026
 
 Modified from "Introduction to the Mind Stone"
 by Martian Rex
@@ -9,34 +9,33 @@ Source: https://stonestoryrpg.com/stonescript/
 */
 
 
-?loc = deadwood
-    ?harvest.distance < 10
-        equip hatchet
+?harvest.distance < 10
+    equip hatchet
 
-        ?item.GetCooldown(hatchet) <= 0 &
-        ^item.CanActivate()
-            activate R
+    ?item.GetCooldown(hatchet) <= 0 &
+    ^item.CanActivate()
+        activate R
 
-    :?pickup.distance < 10
-        equipL star
+:?pickup.distance < 10
+    equipL star
 
-    :?foe.distance > 18
-        equipL trisk
-        equip com shield
+:?foe.distance > 18
+    equipL trisk
+    equip com shield
 
-    :?foe = boss & foe.distance <= 10
+:?foe = boss & foe.distance <= 10
 
-        ?(item.GetCooldown(bardiche) <= 0 &
-        ^item.CanActivate()) |
-        ^(item.right = bardiche &
-        ^item.right.state = 2)
-            equip bardiche
-            activate R
-
-        :
-            equipL vig sword
-            equip com shield
+    ?(item.GetCooldown(bardiche) <= 0 &
+    ^item.CanActivate()) |
+    ^(item.right = bardiche &
+    ^item.right.state = 2)
+        equip bardiche
+        activate R
 
     :
-        equipL ki
-        equipR vig sword
+        equipL vig sword
+        equip com shield
+
+:
+    equipL ki
+    equipR vig sword

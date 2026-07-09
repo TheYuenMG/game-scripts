@@ -1,7 +1,7 @@
 /*
 Plateau Event Farming
 Otis Yuen (TheYuenMG)
-Last modified on 7 July 2026
+Last modified on 8 July 2026
 
 Modified from "The Basics of Stonescript. How
 to Structure Your Code and Activate Items" by
@@ -11,50 +11,49 @@ watch?v=o-oBNx192_I
 */
 
 
-?loc = plateau
-    ?hp <= maxhp * 0.2 & item.potion = heal
-        activate potion
+?hp <= maxhp * 0.2 & item.potion = heal
+    activate potion
 
-    ?harvest.distance < 10
-        equip shovel
+?harvest.distance < 10
+    equip shovel
 
-        ?item.GetCooldown(shovel) <= 0 &
-        ^item.CanActivate()
-            activate R
+    ?item.GetCooldown(shovel) <= 0 &
+    ^item.CanActivate()
+        activate R
 
-    :?pickup.distance < 10
-        equipL star
+:?pickup.distance < 10
+    equipL star
 
-    :?foe.distance > 18
-        equipL trisk
-        equip com shield
+:?foe.distance > 18
+    equipL trisk
+    equip com shield
 
-    :?foe = phase2
-        var rune = stone
+:?foe = phase2
+    var rune = stone
 
-        ?foe = vigor
-            rune = poison
-        ?foe = poison
-            rune = ice
-        ?foe = ice
-            rune = fire
-        ?foe = fire
-            rune = aether
-        ?foe = aether
-            rune = vigor
+    ?foe = vigor
+        rune = poison
+    ?foe = poison
+        rune = ice
+    ?foe = ice
+        rune = fire
+    ?foe = fire
+        rune = aether
+    ?foe = aether
+        rune = vigor
 
-        equipL @rune@ sword
-        equipR com shield
+    equipL @rune@ sword
+    equipR com shield
 
-    :?foe = phase3 & foe.state = 115 &
-    ^foe.time >= 67
-        ?foe.time = 67
-            equipL mind
+:?foe = phase3 & foe.state = 115 &
+^foe.time >= 67
+    ?foe.time = 67
+        equipL mind
 
-    :?foe = phase3 & foe.state >= 100
-        equipL poi hammer
-        equipR vig sword
+:?foe = phase3 & foe.state >= 100
+    equipL poi hammer
+    equipR vig sword
 
-    :
-        equipL vig sword
-        equip com shield
+:
+    equipL vig sword
+    equip com shield
