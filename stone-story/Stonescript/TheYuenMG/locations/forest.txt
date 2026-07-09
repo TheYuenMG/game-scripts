@@ -24,8 +24,7 @@ deadwood.txt
     equip poi shield
 
 :?screen.i >= 5 & item.CanActivate() &
-^item.GetCooldown(blade) <= 0 &
-^buffs.GetTime(experience) <= 30
+^item.GetCooldown(blade) <= 0
     equip Blade of
     activate R
 
