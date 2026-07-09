@@ -11,9 +11,9 @@ deadwood.txt
 */
 
 
-?((foe = ant_hill & foe.distance <= 18 &
-^item.potion = exp) | screen.i >= 4) &
-^item.CanActivate()
+?((foe = ant_hill & foe.distance <= 18) |
+^screen.i >= 4) & item.CanActivate() &
+^item.potion = exp
     activate potion
 
 ?pickup.distance < 10
