@@ -51,7 +51,7 @@ import UI/MindstoneButton
 // *** Plateau Event Farming ***
 ?loc = plateau
     import TheYuenMG/locations/plateau
-    import TheYuenMG/r&d-quests/mask
+    import TheYuenMG/rd-quests/mask
 
 // *** Summer Moonstice Event Currency ***
 >`0,0,#yellow,☼
