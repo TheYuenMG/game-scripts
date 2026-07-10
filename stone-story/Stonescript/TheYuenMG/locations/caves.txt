@@ -9,16 +9,16 @@ manual.html#default-script
 */
 
 
-?foe.distance <= 18 & item.potion = exp &
+?foe.distance <= 5 & item.potion = exp &
 ^item.CanActivate()
     activate potion
 
 ?foe.distance <= 18
     equipL ki
-    equipR vig sword
+    equipR vig wand
 
 ?foe = boss
-    equipL vig sword
+    equipL vig wand
     equip com shield
 
 ?foe.distance > 18
