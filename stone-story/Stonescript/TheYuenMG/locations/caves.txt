@@ -9,18 +9,17 @@ manual.html#default-script
 */
 
 
-?hp <= maxhp * 0.2 & item.potion = heal
+?foe.distance <= 18 & item.potion = exp &
+^item.CanActivate()
     activate potion
 
 ?foe.distance <= 18
-    equipL exp
+    equipL ki
     equipR vig sword
 
 ?foe = boss
     equipL vig sword
     equip com shield
-    ?foe.hp <= foe.maxhp * 0.1
-        equipR exp
 
 ?foe.distance > 18
     equipL trisk
