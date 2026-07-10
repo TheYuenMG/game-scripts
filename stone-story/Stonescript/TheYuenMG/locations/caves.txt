@@ -1,7 +1,7 @@
 /*
 Caves Tar Farming
 Otis Yuen (TheYuenMG)
-Last modified on 27 June 2026
+Last modified on 9 July 2026
 
 Modified from "Default Script" by Martian Rex
 Source: https://stonestoryrpg.com/stonescript/
@@ -9,22 +9,21 @@ manual.html#default-script
 */
 
 
-?loc = caves
-    ?hp <= maxhp * 0.2 & item.potion = heal
-        activate potion
+?hp <= maxhp * 0.2 & item.potion = heal
+    activate potion
 
-    ?foe.distance <= 18
-        equipL exp
-        equipR vig sword
+?foe.distance <= 18
+    equipL exp
+    equipR vig sword
 
-    ?foe = boss
-        equipL vig sword
-        equip com shield
-        ?foe.hp <= foe.maxhp * 0.1
-            equipR exp
+?foe = boss
+    equipL vig sword
+    equip com shield
+    ?foe.hp <= foe.maxhp * 0.1
+        equipR exp
 
-    ?foe.distance > 18
-        equipL trisk
+?foe.distance > 18
+    equipL trisk
 
-    ?pickup.distance < 10
-        equipR star
+?pickup.distance < 10
+    equipR star
