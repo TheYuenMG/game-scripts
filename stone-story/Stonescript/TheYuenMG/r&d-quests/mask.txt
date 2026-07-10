@@ -1,0 +1,16 @@
+/*
+Cultist Mask Activation
+Otis Yuen (TheYuenMG)
+Last modified on 9 July 2026
+
+Modified from "Rite of Passage - Challenge VI"
+by Martian Rex
+Source: https://steamcommunity.com/app/603390/
+discussions/0/3194747223937190668/
+*/
+
+
+?item.GetCooldown(mask) <= 0 & foe.state = 32 &
+^foe.distance <= 18 & item.CanActivate()
+    equip mask
+    activate R
