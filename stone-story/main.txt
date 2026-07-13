@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 8 July 2026
+Last modified on 13 July 2026
 */
 
 
@@ -40,19 +40,27 @@ import UI/MindstoneButton
     equip @item.right@
 
 
-// *** Deadwood Wood Farming ***
-?loc = deadwood
-    import TheYuenMG/locations/deadwood
+// *** Aether Talisman Activation ***
+?summon.count = 0 |
+^summon.GetId() ! "voidweaver"
+  ?item.GetCooldown("aether_talisman") <= 0 &
+  ^item.CanActivate()
+    equip aether talisman
+    activate R
+:
+  ?foe.count > 15 &
+  ^item.GetCooldown("voidweaver") <= 0
+    activate voidweaver
 
-// *** Forest Vigor Rune Farming ***
-?loc = forest
-    import TheYuenMG/locations/forest
+    // *** Deadwood Wood Farming ***
+    ?loc = deadwood
+      import TheYuenMG/locations/deadwood
 
-// *** Plateau Event Farming ***
-?loc = plateau
-    import TheYuenMG/locations/plateau
-    import TheYuenMG/rd-quests/mask
+    // *** Forest Vigor Rune Farming ***
+    ?loc = forest
+      import TheYuenMG/locations/forest
 
-// *** Summer Moonstice Event Currency ***
->`0,0,#yellow,☼
->`1,0,@item.GetCount(warm_stone)@
+    // *** Plateau Event Farming ***
+    ?loc = plateau
+      import TheYuenMG/locations/plateau
+      import TheYuenMG/rd-quests/mask
