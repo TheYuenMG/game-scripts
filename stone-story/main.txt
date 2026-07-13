@@ -52,15 +52,15 @@ import UI/MindstoneButton
   ^item.GetCooldown("voidweaver") <= 0
     activate voidweaver
 
-    // *** Deadwood Wood Farming ***
-    ?loc = deadwood
-      import TheYuenMG/locations/deadwood
+  // *** Deadwood Wood Farming ***
+  ?loc = deadwood
+    import TheYuenMG/locations/deadwood
 
-    // *** Forest Vigor Rune Farming ***
-    ?loc = forest
-      import TheYuenMG/locations/forest
+  // *** Forest Vigor Rune Farming ***
+  ?loc = forest
+    import TheYuenMG/locations/forest
 
-    // *** Plateau Event Farming ***
-    ?loc = plateau
-      import TheYuenMG/locations/plateau
-      import TheYuenMG/rd-quests/mask
+  // *** Plateau Event Farming ***
+  ?loc = plateau
+    import TheYuenMG/locations/plateau
+    import TheYuenMG/rd-quests/mask
