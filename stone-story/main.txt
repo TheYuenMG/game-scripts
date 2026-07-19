@@ -13,14 +13,6 @@ Last modified on 18 July 2026
 */
 
 
-// *** Custom Imports ***
-/*
-sys.SetFileUrl("https://raw.githubusercontent
-^.com/TheYuenMG/game-scripts/refs/heads/main/
-^stone-story/Stonescript/")
-*/
-
-
 // *** Community Scripts ***
 import Cosmetics/Hats/Skully
 import Cosmetics/PetBoo
