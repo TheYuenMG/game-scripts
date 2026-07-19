@@ -1,0 +1,16 @@
+/*
+TheYuenMG's Custom Imports for Mobile
+Otis Yuen (TheYuenMG)
+Last modified on 18 July 2026
+
+Modified from Discord post by Incoherent Toast
+at 26 April 2025, 13:24
+Source: https://discord.com/channels/
+423242655498240000/597668520888762388/
+1365785554125324339
+*/
+
+
+sys.SetFileUrl("https://raw.githubusercontent
+^.com/TheYuenMG/game-scripts/refs/heads/main/
+^stone-story/Stonescript/")
