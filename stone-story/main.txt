@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 13 July 2026
+Last modified on 18 July 2026
 */
 
 
@@ -42,16 +42,13 @@ import UI/MindstoneButton
 
 // *** Aether Talisman Activation ***
 ?summon.count = 0 |
-^summon.GetId() ! "voidweaver"
-    ?item.GetCooldown("aether_talisman") <= 0 &
+^summon.GetId() ! voidweaver
+    ?item.GetCooldown(aether_talisman) <= 0 &
     ^item.CanActivate()
         equip aether talisman
         activate R
-:
-    ?foe.count > 15 &
-    ^item.GetCooldown("voidweaver") <= 0
-        activate voidweaver
 
+:
     // *** Deadwood Wood Farming ***
     ?loc = deadwood
         import TheYuenMG/locations/deadwood
