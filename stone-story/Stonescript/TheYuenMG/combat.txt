@@ -20,6 +20,11 @@ func Use(weapon)
     activate R
 
 
+// *** Inclusive Numerical Range ***
+func InRange(num, min, max)
+    return num >= min & num <= max
+
+
 // *** Attack Animation Cancelling ***
 ?item.left.state = 3
     equipL *0 wand //trash
