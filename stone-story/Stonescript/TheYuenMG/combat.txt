@@ -10,16 +10,6 @@ watch?v=jHaFe08hAZQ
 */
 
 
-// *** Attack Animation Cancelling ***
-?item.left.state = 3
-    equipL *0 wand //trash
-    equipL @item.left@
-
-?item.right.state = 3
-    equipR *0 shield //trash
-    equip @item.right@
-
-
 // *** Ability Activation ***
 func CanUse(weapon)
     return item.CanActivate() &
@@ -28,3 +18,13 @@ func CanUse(weapon)
 func Use(weapon)
     equip @weapon@
     activate R
+
+
+// *** Attack Animation Cancelling ***
+?item.left.state = 3
+    equipL *0 wand //trash
+    equipL @item.left@
+
+?item.right.state = 3
+    equipR *0 shield //trash
+    equip @item.right@
