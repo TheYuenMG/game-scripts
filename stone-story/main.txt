@@ -9,7 +9,7 @@
 /*
 Stonescript File for Stone Story 4.32.3
 Otis Yuen (TheYuenMG)
-Last modified on 18 July 2026
+Last modified on 26 July 2026
 */
 
 
@@ -22,14 +22,8 @@ import UI/FoeStateTracker
 import UI/MindstoneButton
 
 
-// *** Attack Animation Cancelling ***
-?item.left.state = 3
-    equipL *0 wand //trash
-    equipL @item.left@
-
-?item.right.state = 3
-    equipR *0 shield //trash
-    equip @item.right@
+// *** Custom Imports ***
+import TheYuenMG/combat
 
 
 // *** Aether Talisman Activation ***
