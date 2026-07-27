@@ -39,8 +39,8 @@ deadwood.txt
         activate R
 
     :
-        equipL poi hammer
-        equip moon
+        equipL moon
+        equipR poi hammer
 
 :
     equipL vig wand
