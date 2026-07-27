@@ -1,0 +1,30 @@
+/*
+Useful Combat Scripts
+Otis Yuen (TheYuenMG)
+Last Modified on 26 July 2026
+
+Modified from "Stonescript Tutorial: Functions
+and Advanced Strategies" by Incoherent Toast
+Source: https://www.youtube.com/
+watch?v=jHaFe08hAZQ
+*/
+
+
+// *** Attack Animation Cancelling ***
+?item.left.state = 3
+    equipL *0 wand //trash
+    equipL @item.left@
+
+?item.right.state = 3
+    equipR *0 shield //trash
+    equip @item.right@
+
+
+// *** Ability Activation ***
+func CanUse(weapon)
+    return item.CanActivate() &
+    ^item.GetCooldown(weapon) <= 0
+
+func Use(weapon)
+    equip @weapon@
+    activate R
