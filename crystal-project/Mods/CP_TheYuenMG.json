@@ -1,17 +1,202 @@
 {
-  "ID": "283a24e1-7b3f-4750-8906-a98d684f0526",
-  "Title": "New Project",
-  "Description": "A new project.",
-  "Author": "",
-  "Version": "1.0",
+  "ID": "69420",
+  "Title": "Yuen's CP Stash",
+  "Description": "TheYuenMG's personal collection of modifications to Crystal Project.",
+  "Author": "Otis Yuen",
+  "Version": "0.1",
   "EditorVersion": 32,
   "SteamWorkshopFileID": 0,
-  "Timestamp": "2026-07-28T16:24:20.1192834Z",
+  "Timestamp": "2026-07-29T07:16:23.0992735Z",
   "IsLocalization": false,
   "Language": null,
-  "HasCustomContent": false,
-  "Fonts": null,
-  "System": null,
+  "HasCustomContent": true,
+  "Fonts": {
+    "FontPixel": {
+      "Standard": {
+        "TtfFileName": "JetBrainsMono-Regular",
+        "Size": 36,
+        "OffsetY": 2
+      },
+      "StandardBold": {
+        "TtfFileName": "JetBrainsMono-Bold",
+        "Size": 36,
+        "OffsetY": 2
+      },
+      "Small": {
+        "TtfFileName": "JetBrainsMono-Regular",
+        "Size": 30,
+        "OffsetY": 6
+      },
+      "SmallBold": {
+        "TtfFileName": "JetBrainsMono-Bold",
+        "Size": 30,
+        "OffsetY": 6
+      },
+      "Header": {
+        "TtfFileName": "JetBrainsMono-Bold",
+        "Size": 48,
+        "OffsetY": -12
+      },
+      "HeaderBig": {
+        "TtfFileName": "JetBrainsMono-Bold",
+        "Size": 72,
+        "OffsetY": -36
+      }
+    },
+    "FontSmooth": {
+      "Standard": {
+        "TtfFileName": "NotoSansJP-Regular",
+        "Size": 40,
+        "OffsetY": -2
+      },
+      "StandardBold": {
+        "TtfFileName": "NotoSansJP-Bold",
+        "Size": 40,
+        "OffsetY": -2
+      },
+      "Small": {
+        "TtfFileName": "NotoSansJP-Regular",
+        "Size": 36,
+        "OffsetY": 0
+      },
+      "SmallBold": {
+        "TtfFileName": "NotoSansJP-Bold",
+        "Size": 36,
+        "OffsetY": 0
+      },
+      "Header": {
+        "TtfFileName": "NotoSansJP-Bold",
+        "Size": 52,
+        "OffsetY": -12
+      },
+      "HeaderBig": {
+        "TtfFileName": "NotoSansJP-Bold",
+        "Size": 72,
+        "OffsetY": -40
+      }
+    }
+  },
+  "System": {
+    "StartingLoot": null,
+    "MemberDefaults": null,
+    "BattleConfig": null,
+    "FieldConfig": null,
+    "TeleportPoints": null,
+    "MainNpcs": null,
+    "NarrationItems": null,
+    "BulletinItems": null,
+    "Achievements": null,
+    "Randomizer": null,
+    "Vocab": {
+      "General": null,
+      "AbilityModText": null,
+      "StatModText": null,
+      "EquipmentSlotNames": null,
+      "EquipmentNames": null,
+      "ElementNames": null,
+      "InputCharField": null,
+      "NewLineStartRangeList": "0",
+      "NewLineEndList": null,
+      "AllowNewLineAtAnyChar": false,
+      "RandNamesM": [
+        "50 Terabytes of Crystal Project",
+        "Alain",
+        "Alfonso",
+        "Amadi",
+        "Antoninus",
+        "Badass Cool Guy",
+        "Barnaby",
+        "Blake",
+        "Charlie",
+        "Chifuniro",
+        "Cornelius",
+        "Dugald",
+        "Dusty",
+        "Frazier",
+        "Genesio",
+        "Gopal",
+        "Gregor",
+        "Guy",
+        "Hamza",
+        "Henrik",
+        "Iason",
+        "Joakim",
+        "Julius",
+        "Keir Starmer's Wife's Boyfriend",
+        "Kim Jong-Un",
+        "Leandro",
+        "Marcel",
+        "Marco",
+        "Moses Ingram",
+        "Nash",
+        "Niko",
+        "Oddr",
+        "Omari",
+        "P. Diddy",
+        "Quintilius",
+        "Ram",
+        "Rees",
+        "Rodney",
+        "Rohit",
+        "Stefans",
+        "Tau",
+        "Umut",
+        "Walther",
+        "Xanthos",
+        "Xaver"
+      ],
+      "RandNamesF": [
+        "Alea",
+        "Alja",
+        "Aurelija",
+        "Blagorodna",
+        "Ceres",
+        "Charity",
+        "Charlene",
+        "Clara",
+        "Corrina",
+        "Darya",
+        "Delilah",
+        "Dema",
+        "Elsa",
+        "Farai",
+        "Hanna",
+        "Hariett",
+        "Hekate",
+        "Inaya",
+        "Jennifer",
+        "Judite",
+        "Kaya",
+        "Kristina",
+        "Lana Spelt Backwards",
+        "Lena",
+        "Lidia",
+        "Lillias",
+        "Lucia from Wii Sports Resort",
+        "MC Frontalot",
+        "Melita",
+        "Monica",
+        "Noemi",
+        "Okay half these female names are the most fucking batshit names I\nhave ever heard of what the actual fuck is wrong with this game",
+        "Paolina",
+        "Priti",
+        "Prudence",
+        "Rachel Homan",
+        "Simona",
+        "Sophea",
+        "Steffi",
+        "Sveva",
+        "Tova",
+        "Tzila",
+        "Veasna",
+        "Vanessa",
+        "Xenia"
+      ],
+      "TextReplacements": null
+    },
+    "Credits": null,
+    "Comments": null
+  },
   "Tree": [
     {
       "ModelTypeID": 3,
@@ -2535,7 +2720,7 @@
           "ModelID": 460,
           "SortOrder": 7,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 0,
@@ -2858,28 +3043,28 @@
               "ModelID": 415,
               "SortOrder": 9,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
               "ModelID": 395,
               "SortOrder": 10,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
               "ModelID": 396,
               "SortOrder": 11,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
               "ModelID": 416,
               "SortOrder": 12,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -2921,21 +3106,21 @@
               "ModelID": 423,
               "SortOrder": 18,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
               "ModelID": 493,
               "SortOrder": 19,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
               "ModelID": 500,
               "SortOrder": 20,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             }
           ],
           "IsExpanded": false
@@ -2985,7 +3170,7 @@
               "ModelID": 67,
               "SortOrder": 5,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -3278,7 +3463,7 @@
               "ModelID": 325,
               "SortOrder": 0,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -3313,7 +3498,7 @@
               "ModelID": 375,
               "SortOrder": 5,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -3356,7 +3541,7 @@
               "ModelID": 464,
               "SortOrder": 10,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -3427,7 +3612,7 @@
               "ModelID": 65,
               "SortOrder": 7,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -3449,7 +3634,7 @@
               "ModelID": 384,
               "SortOrder": 9,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             }
           ],
           "IsExpanded": false
@@ -3722,14 +3907,14 @@
               "ModelID": 203,
               "SortOrder": 0,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
               "ModelID": 212,
               "SortOrder": 1,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             }
           ],
           "IsExpanded": false
@@ -5454,7 +5639,7 @@
                   "ModelID": 241,
                   "SortOrder": 0,
                   "Children": [],
-                  "IsExpanded": false
+                  "IsExpanded": true
                 }
               ],
               "IsExpanded": false
@@ -6097,7 +6282,7 @@
               "ModelID": 238,
               "SortOrder": 6,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -6477,7 +6662,7 @@
                   "ModelID": 52,
                   "SortOrder": 0,
                   "Children": [],
-                  "IsExpanded": false
+                  "IsExpanded": true
                 },
                 {
                   "ModelTypeID": 15,
@@ -6691,7 +6876,7 @@
                   "ModelID": 29,
                   "SortOrder": 0,
                   "Children": [],
-                  "IsExpanded": false
+                  "IsExpanded": true
                 },
                 {
                   "ModelTypeID": 15,
@@ -6773,7 +6958,7 @@
                   "ModelID": 28,
                   "SortOrder": 0,
                   "Children": [],
-                  "IsExpanded": false
+                  "IsExpanded": true
                 },
                 {
                   "ModelTypeID": 15,
@@ -6833,7 +7018,7 @@
                       "IsExpanded": false
                     }
                   ],
-                  "IsExpanded": false
+                  "IsExpanded": true
                 },
                 {
                   "ModelTypeID": 15,
@@ -7829,7 +8014,7 @@
                   "IsExpanded": false
                 }
               ],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -8305,7 +8490,7 @@
                   "IsExpanded": false
                 }
               ],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 0,
@@ -16165,7 +16350,7 @@
           "ModelID": 144,
           "SortOrder": 13,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 8,
@@ -16324,7 +16509,7 @@
           "ModelID": 146,
           "SortOrder": 8,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 8,
@@ -16461,7 +16646,7 @@
               "ModelID": 228,
               "SortOrder": 0,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             }
           ],
           "IsExpanded": false
@@ -16471,14 +16656,14 @@
           "ModelID": 127,
           "SortOrder": 21,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 8,
           "ModelID": 81,
           "SortOrder": 22,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 8,
@@ -17420,14 +17605,14 @@
               "ModelID": 159,
               "SortOrder": 0,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             },
             {
               "ModelTypeID": 4,
               "ModelID": 87,
               "SortOrder": 1,
               "Children": [],
-              "IsExpanded": false
+              "IsExpanded": true
             }
           ],
           "IsExpanded": false
@@ -17923,7 +18108,7 @@
                               "ModelID": 87,
                               "SortOrder": 0,
                               "Children": [],
-                              "IsExpanded": false
+                              "IsExpanded": true
                             }
                           ],
                           "IsExpanded": false
@@ -26497,14 +26682,14 @@
           "ModelID": 0,
           "SortOrder": 0,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 11,
           "ModelID": 1,
           "SortOrder": 1,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 12,
@@ -26532,7 +26717,7 @@
           "ModelID": 119,
           "SortOrder": 5,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         }
       ],
       "IsExpanded": false
@@ -26846,14 +27031,14 @@
           "ModelID": 254,
           "SortOrder": 4,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 6,
           "ModelID": 0,
           "SortOrder": 5,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 6,
@@ -26965,7 +27150,7 @@
           "ModelID": 0,
           "SortOrder": 21,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         },
         {
           "ModelTypeID": 10,
@@ -27056,7 +27241,7 @@
           "ModelID": 59,
           "SortOrder": 34,
           "Children": [],
-          "IsExpanded": false
+          "IsExpanded": true
         }
       ],
       "IsExpanded": false
