@@ -11,37 +11,27 @@ deadwood.txt
 */
 
 
-?((foe = ant_hill & foe.distance <= 18) |
-^screen.i >= 4) & item.CanActivate() &
-^item.potion = exp
+?foe.distance <= 5 & item.potion = exp &
+^item.CanActivate()
     activate potion
 
 ?pickup.distance < 10
-    equipL star
-
-:?screen.i >= 5 & foe.count >= 20 &
-^item.GetCooldown(blade) <= 0 &
-^item.CanActivate()
-    equip Blade of
-    activate R
+    equipR star
 
 :?foe.distance > 18
     equipL trisk
-    equip poi shield
 
 :?foe = boss
+    equip bash
 
-    ?(item.GetCooldown(heavy_hammer) <= 0 &
-    ^item.CanActivate()) |
-    ^(item.right = heavy hammer &
+    ?item.GetCooldown(＂bardiche＂) <= 0 &
+    ^foe.distance < 10 &
+    ^item.CanActivate() |
+    ^(item.right = ＂bardiche＂ &
     ^item.right.state = 2)
-        equip heavy hammer
+        equip bard
         activate R
 
-    :
-        equipL poi hammer
-        equip poi shield
-
 :
-    equipL vig wand
-    equipR poi wand
+    // just kidding repeater sucks
+    equipR wand
