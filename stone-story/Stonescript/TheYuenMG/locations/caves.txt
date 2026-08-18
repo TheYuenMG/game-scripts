@@ -20,14 +20,16 @@ manual.html#default-script
     equipL trisk
 
 :?foe = boss
+    equip ice sword
+
     ?item.GetCooldown("bardiche") <= 0 &
+    ^foe.distance < 5 &
     ^item.CanActivate() |
     ^(item.right = "bardiche" &
-    item.right.state = 2)
+    ^item.right.state = 2)
         equip bard
         activate R
 
 :
-    // yes I know I am slowly becoming one of
-    // those repeater fans who never shower
-    equip repeat
+    // just kidding repeater sucks
+    equipR wand
