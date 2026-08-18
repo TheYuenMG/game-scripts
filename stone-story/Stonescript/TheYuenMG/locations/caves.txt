@@ -1,7 +1,7 @@
 /*
 Caves Tar Farming
 Otis Yuen (TheYuenMG)
-Last modified on 9 July 2026
+Last modified on 18 August 2026
 
 Modified from "Default Script" by Martian Rex
 Source: https://stonestoryrpg.com/stonescript/
@@ -13,16 +13,21 @@ manual.html#default-script
 ^item.CanActivate()
     activate potion
 
-?foe.distance <= 18
-    equipL ki
-    equipR vig wand
-
-?foe = boss
-    equipL vig wand
-    equip com shield
-
-?foe.distance > 18
-    equipL trisk
-
 ?pickup.distance < 10
     equipR star
+
+:?foe.distance > 18
+    equipL trisk
+
+:?foe = boss
+    ?item.GetCooldown("bardiche") <= 0 &
+    ^item.CanActivate() |
+    ^(item.right = "bardiche" &
+    item.right.state = 2)
+        equip bard
+        activate R
+
+:
+    // yes I know I am slowly becoming one of
+    // those repeater fans who never shower
+    equip repeat
